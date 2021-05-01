@@ -1,0 +1,40 @@
+.admin-sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.admin-sidebar{
+    flex: 1;
+    padding: 15px;
+    min-height: 100vh;
+    background-color: rgb(246, 251, 255);
+
+}
+
+.admin-sidebar-list-item{
+    padding: 15px;
+
+}
+.admin-sidebar-list-item-link{
+    font-size: larger;
+    text-decoration: none;
+    text-decoration: black;
+}
+.admin-logo-header{
+    font-size: 35px;
+}
+.admin-logo{
+    margin: auto;
+}
+.admin-sidebar-list-item:hover{
+    transition: 0.5s all;
+   background-color: rgba(0, 19, 128, 0.151);
+}
+
+.admin-sidebar-list-item:link{
+    color: white;
+ }
+ .admin-sidebar-list-item:visited{
+    color: white;
+ }
+

@@ -1,0 +1,54 @@
+.checkerlang{
+    margin: 15px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #43629c;
+    color: white;
+
+}
+.checkerlang > option{
+    background-color: white;
+    color:black;
+    outline: none;
+    border-radius: 15px;
+    border: none;
+}
+.checker{
+    padding: 15px;
+    min-height: 65vh;
+    max-height: 75vh;
+    overflow-y: scroll;  
+}
+.checker::-webkit-scrollbar {
+    display: none;
+}
+.check-contaier{
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    min-height: 150px;
+    border-radius: 5px;
+    background-color: #4267B210;
+}
+
+.checker-input{
+    padding: 10px;
+    width:75%;
+      border: none;
+      outline: none;
+      margin-left: 20px;
+      background-color: #43629c;
+      color: white;
+}
+
+.btn{
+    cursor: pointer;
+    transition: all 0.25s;
+    background-color: #43629c;
+}
+.btn:hover {
+ padding: 12px;
+}

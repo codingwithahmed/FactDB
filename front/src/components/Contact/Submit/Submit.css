@@ -1,0 +1,65 @@
+.text_input{
+    margin: auto;
+    height: 350px;
+    width: 70%;
+    border: 2px solid; 
+    font-size: 28px;
+}
+.name_input {
+    border: 2px solid; 
+    font-size: 18px;
+    margin: auto;
+    width: 45%;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 10px;
+
+
+}
+.input{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.email_input {
+    padding: 10px;
+    border: 2px solid; 
+    font-size: 18px;
+    margin: auto;
+    width: 45%;
+    outline: none;
+    margin-bottom: 10px;
+
+}
+.submit{
+    margin: auto;
+    width: 1050px;
+    display: flex;
+    flex-direction: column;
+}
+.dispute{
+    margin: auto;
+    width: 1050px;
+    display: flex;
+    flex-direction: column;
+}
+.submit-row{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width:768px){
+    .submit{
+        width: 550px;
+    }
+}
+@media screen and (max-width:425px){
+    .submit{
+        width: 300px;
+    }
+    .text_input{
+        width: 100%;
+        height: 200px;
+    }
+}

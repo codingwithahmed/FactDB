@@ -1,0 +1,82 @@
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 1050px;
+    margin: auto;
+    align-items: center;
+    font-family: Robotos;
+    height: fit-content;
+}
+.logo{
+    flex: 1;
+    color: #4267B2;
+
+}
+.searchbar{
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 8px;
+    height: 35px;
+    justify-items: start;
+}
+#search{
+  border: none;
+  outline: none;
+  width: 300px;
+  flex: 1;
+  
+}
+.menu{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 2;
+}
+
+
+.SignUp{
+    border: #4267B2 solid 1.5px;
+    background:none;
+    outline: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    color: #4267B2;
+}
+.extension{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4267B2;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+@media screen and (max-width:769px){
+    .extension{
+        display: none;
+    }
+    .header{
+        width: 540px;
+        
+    }
+    .searchbar{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width:425px){
+    
+    .header{
+        width: 340px;
+    }
+    
+    
+}

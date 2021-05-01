@@ -1,0 +1,44 @@
+.container {
+  margin: 1.5em;
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  min-height: 250px;
+}
+
+.result {
+  margin-top: 1em;
+}
+
+.country-name{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  min-width: 250px;
+  
+}
+.country-name:focus {
+  border-bottom: 1px solid blue;
+}
+.result-container{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.enter-country{
+  font-size: 28px;
+}
+.search-btn {
+  margin-top: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(0, 95, 173);
+  border: none;
+  outline: none;
+}
+
+.search-btn:hover {
+     transition: all 0.2s;
+     background-color: rgb(1, 77, 139);
+     padding: 9px;
+}

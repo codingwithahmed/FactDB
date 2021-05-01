@@ -1,0 +1,32 @@
+.sidebar{
+    scroll-behavior: smooth;
+}
+.space{
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+.legal-subheading{
+    font-size: 22px;
+}
+.legal-col{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width:768px){
+    .legal-subheading{
+        font-size: 14px;
+    }
+    .legal-col{
+        flex-direction: row;
+    }
+    .space{
+        height: fit-content;
+    }
+}
+@media screen and (max-width:425px){
+    .legal-subheading{
+        font-size: 12px;
+    }
+}

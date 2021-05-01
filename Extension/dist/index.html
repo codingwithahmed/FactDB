@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="container">
+    <form class="form-data" autocomplete="on">
+      <div class="enter-country">
+        Enter Fact to get more information:
+      </div>
+      <div>
+        <input type="text" class="country-name" />
+      </div>
+      <button class="search-btn">Search</button>
+    </form>
+    <div class="result">
+      <div class="loading">loading...</div>
+      <div class="errors"></div>
+      <div class="data"></div>
+      <div class="result-container">
+        <p><strong>Headline: </strong><span class="Headline"></span></p>
+        <p>
+          <strong>Clickbait: </strong> <span class="Clickbait"></span>
+        </p>
+        <p><strong>Insult: </strong><span class="Insult"></span></p>
+        <p><strong>Result: </strong><span class="Result"></span></p>
+        <p><strong>Sarcasm: </strong><span class="Sarcasm"></span></p>
+        <p><strong>Racsim: </strong><span class="Racsim"></span></p>
+
+
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

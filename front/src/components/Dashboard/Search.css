@@ -1,0 +1,97 @@
+.Searchsearchbox{
+    background-color: white;
+    width: 850px;
+margin: auto;
+border-radius: 15px;
+display: flex;
+flex-direction: row;
+padding: 15px;
+box-shadow: 0px 0px 54px 35px #00000005;
+}
+.dashoption{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    justify-content: space-between;
+}
+.dashoption >div> select {
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #346edb;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius:5px ;
+}
+.Searchtextarea{
+    height: 300px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+.dashoption >div > select > option {
+    background-color: white;
+    color:black;
+    outline: none;
+    border-radius: 15px;
+
+    border: none;
+}
+.Searchsearchbox > input {
+    width: 825px;
+    outline: none;
+    border: none;
+}
+.searchSpace{
+    height: 150px;
+}
+
+.SearchContent{
+    padding: 50px;
+}
+.SearchContent > h2 {
+    color: #000000d5;
+font-size: 48px;
+}
+.SearchContent > p {
+    font-size: 21px;
+    color: #000000d5;
+}
+.btn-outline{
+    transition: all 0.25s;
+    cursor: pointer;
+}
+.btn-outline:hover{
+ background-color: #346edb;
+ color: white;
+}
+.loader {
+    border: 12px solid #f3f3f3; 
+    border-top: 12px solid #346edb; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+@media screen and (max-width:768px){
+    .Searchsearchbox{
+        width: 580px;
+    }
+    .search{
+        width: 580px;
+    }
+}
+
+@media screen and (max-width:425px){
+    .Searchsearchbox{
+        width: 270px;
+    }
+    .search{
+        width: 100%;
+    }
+}

@@ -1,0 +1,40 @@
+.admin-top{
+    font-size: 35px;
+}
+.admin-container{
+    padding: 25px;
+}
+.admin-input {
+    font-size: 21px;
+    border: none;
+    outline: none;
+    width: 350px;
+}
+.admin-input-container > div{
+    width: max-content;
+    border: 2px solid rgb(0, 0, 0);
+}
+.admin-btn{
+background: black;
+color: white;
+border: none;
+outline: none;
+width: 150px;
+height: 70px;
+}
+.admin-done:hover {
+    transition: all 0.5s;
+    color: black;
+    background-color: white;
+        border: 2px solid black;
+
+}
+
+.admin-done {
+    margin-top: 25px;
+}
+
+.admin-input-container > div >div{
+    width: max-content;
+    border: 2px solid rgb(0, 0, 0);
+}

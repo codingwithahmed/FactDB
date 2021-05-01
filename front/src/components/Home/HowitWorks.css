@@ -1,0 +1,133 @@
+
+.howitworks{
+   margin-top: 10px;
+   max-width: 1050px;
+}
+
+.how-it-works-right-box{
+   background-color: white;
+   border: 6px solid #4267B2;
+   border-top: 35px solid #4267B2;
+   max-width: 230px;
+   max-height: 250px;
+   float: left;
+   margin-top: 80px;
+   margin-left: -100px;
+
+}
+
+.home-box-menu-img{
+   width: 350px;
+   height: 100px;
+}
+.how-it-works-right-box-bottom{
+   padding: 15px;
+   line-height: 10px;
+   text-align: center;
+}
+.how-it-works-right-box-text{
+   text-align: center;
+   font-size: x-small;
+}
+
+.how-it-works-right-box-logo{
+   width: 100px;
+}
+.how-it-works-right-box-heading{
+   font-size: larger;
+   color: #4267B2;
+}
+.rectangle{
+   max-width: 1050px;
+   border: 6px solid #4267B2;
+   min-height: 400px;
+
+}
+.rect-col{
+   text-align: center;
+   margin-top: 20px;
+   margin-right: 55px;
+   max-width: 250px;
+}
+.rect-col-step{
+   margin-top: -10px;
+}
+.rect-row{
+   display: flex;
+   flex-direction: row;
+}
+
+.rect-col-img{
+   width: 250px;
+}
+
+@media screen and (max-width:768px){
+   .howitworks{
+      width: 510px;
+      margin:auto;
+      margin-top: 150px;
+
+   }
+
+
+   .rectangle{
+      min-height: 768px;
+      max-width: 510px;
+   }
+   .rect-row{
+      flex-direction: column;
+      width: 260px;
+      margin: auto;
+   }
+   .rect-col{
+      margin: auto;
+      margin-top: 20px;
+      max-width: 320px;
+
+   }
+   .how-it-works-right-box{
+      margin-top: -100px;
+      margin-left: 130px;
+   }
+
+   .home-box-menu-img{
+      width: 170px;
+      height: 50px;
+   }
+}
+
+
+@media screen and (max-width:425px){
+   .howitworks{
+      width: 340px;
+      margin:auto;
+      margin-top: 150px;
+      
+
+   }
+
+
+   .rectangle{
+      min-height: 768px;
+      max-width: 340px;
+   }
+   .rect-row{
+      flex-direction: column;
+      width: 260px;
+      margin: auto;
+   }
+   .rect-col{
+      margin: auto;
+      margin-top: 20px;
+      max-width: 320px;
+
+   }
+   .how-it-works-right-box{
+      margin-top: -100px;
+      margin-left: 50px;
+   }
+   .home-box-menu-img{
+      width: 100px;
+      height: 50px;
+   }
+}

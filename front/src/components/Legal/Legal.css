@@ -1,0 +1,19 @@
+.legal{
+    width: 1050px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width:768px){
+    .legal{
+        width: 600px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:425px){
+    .legal{
+        width: 325px;
+        flex-direction: column;
+    }
+}

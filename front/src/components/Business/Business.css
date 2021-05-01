@@ -1,0 +1,163 @@
+.business{
+    width: 1050px;
+    margin: auto;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.grid-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.grid-col{
+    width: fit-content;
+    margin: 2%;
+    max-width: 310px;
+    padding: 2%;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    vertical-align: middle;
+    border : 1px solid #00000010;
+    transition:  all 0.5s;
+
+}
+.grid-text{
+    font-size: medium;
+    color: #000000;
+}
+
+
+.boxs{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-row{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+.box-col{
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    box-shadow: -1px 0 43px 12px rgba(0, 0, 0, 0.055);
+    border-radius: 12px;
+    margin: 25px;
+    padding: 75px;
+    max-width: 300px;
+    max-height: 350px;
+    justify-content: center;
+}
+.business-row{
+    display: flex;
+    flex-direction: row;
+}
+.grid-col-img{
+    width: 50px;
+}
+.business-row-img{
+    max-width: 300px;
+}
+.business-down-image{
+    max-width: 400px;
+    margin-right: 35px;
+}
+.business-top-image{
+    max-width: 400px;
+}
+.business-down-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-col .test{
+    transition:  all 0.5s;
+    fill: #4267B2;
+}
+
+.bs-btn{
+    transition: all 0.25s;
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline: none;
+    background-color: #4267B2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+    box-shadow: 0px 0px 52px 52px #00000010;
+}
+.bs-btn:hover{
+   background-color: #315db4;
+   padding: 20px;
+   padding-left: 35px;
+   padding-right: 35px;
+}
+
+@media screen and (max-width:768px){
+.business-top-image{
+    max-width: 250px;
+}
+     .business-row-img{
+         flex: 1;
+     }
+    .business{
+        width: 550px;
+    }
+    .business-row-text{
+        flex: 2;
+    }
+    .grid-row{
+        flex-direction: column;
+        margin: auto;
+    }
+    .grid-col{
+        flex-direction: row;  
+    }
+    .grid-col-img{
+        width: 50px;
+    }
+    .box-row{
+        flex-direction: column;
+        margin: auto;
+
+    }
+    .business-down-image{
+        max-width: 500px;
+    }
+    .business-down-row{
+        flex-direction: column-reverse;
+    }
+
+}
+
+
+@media screen and (max-width:425px){
+    .business{
+        width: 320px;
+    }
+    .business-row-img{
+        max-width: 150px;
+    }
+    .business-down-image{
+        max-width: 300px;
+    }
+    .box-col{
+        min-width: 150px;
+    }
+    .business-row{
+        margin: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

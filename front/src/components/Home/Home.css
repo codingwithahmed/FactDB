@@ -1,0 +1,149 @@
+.home{
+    width: 1050px;
+    margin: auto;
+    transition: all 0.5s;
+}
+
+*{
+    text-decoration: none;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+.heading{
+    font-size: 48px;
+    
+}
+.subheading{
+    font-size: 26px;
+    font-weight: 300;
+}
+.center{
+    text-align: center;
+}
+.btn-outline{
+    border: #4267B2 solid 1.5px;
+    background:none;
+    outline: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    color: #4267B2;
+    margin-right: 2vw;
+}
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4267B2;
+    border: none;
+    outline: none;
+    color: white;
+}
+.img{
+    min-width: 350px;
+    max-width: 450px;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    height: 100px;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.tab-list {  border-bottom: 1px solid #ccc;
+    padding-left: 0;
+  }
+  
+  .tab-list-item {
+    display: inline-block;
+    list-style: none;
+    margin-bottom: -1px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .tab-list-active {
+    background-color: white;
+    border: solid #ccc;
+    border-width: 1px 1px 0 1px;
+  }
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.btn-center{
+    width: 20%;
+    margin-left: 30vw;
+}
+
+.desc{
+    font-size: 25px;
+}
+.home-box-menu-right{
+    border-right: #000000 1px solid;
+    width: 33%;
+}
+.home-box-menu-left{
+    border-left: #000000 1px solid;
+    width: 33%;
+
+}
+.home-box-menu-center{
+    width: 34%;
+}
+.home-box-menu-active:hover{
+    border-top: #4267B2 5px solid;
+}
+
+.btn-link{
+    color: #4267B2;
+}
+.btn-link:hover{
+    color:white
+}
+
+@media screen and (max-width : 768px) {
+    .home{
+        width: 510px;
+        margin:auto;
+    }
+    .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        vertical-align: middle;
+    }
+    .box{
+        height: 50px;
+    }
+    .heading{
+        font-size: 30px;
+        
+    }
+    .subheading{
+        font-size: 24px;
+    }
+    
+    .img{
+        margin-top: 2%;
+    }
+    .btn-center{
+        margin: auto;
+    }
+    .add-to-none{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width : 425px) {
+    .home{
+        width: 320px;
+    }
+}
+

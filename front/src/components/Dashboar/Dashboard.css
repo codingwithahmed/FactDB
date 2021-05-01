@@ -1,0 +1,10 @@
+.dashboard{
+    background: #4267B210;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+}
+
+@media screen and (max-width:768px){
+    .dashboard{ flex-direction: column;}
+}

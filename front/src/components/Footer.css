@@ -1,0 +1,33 @@
+.hr{
+    width: 75%;
+}
+.footer{
+    width: 1050px;
+    margin: auto;
+}
+.footer_links{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.footer_link{
+    font-size: 18px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@media screen and (max-width:768px){
+    .footer{
+        width: 540px;
+    }
+}
+
+
+@media screen and (max-width:425px){
+    .footer{
+        width: 300px;
+    }
+    .footer_link{
+        font-size: 12px;
+    }
+}

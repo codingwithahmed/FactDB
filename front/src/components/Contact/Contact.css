@@ -1,0 +1,15 @@
+.contact{
+    /*margin: auto;*/
+}
+.card{
+    min-width: 250px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: -2px 4px 73px 0 rgba(0, 0, 0, 0.075);
+}
+.cut{
+    width: 100%;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    height: 45px;
+}

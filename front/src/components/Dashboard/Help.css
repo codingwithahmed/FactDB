@@ -1,0 +1,26 @@
+.help{
+    display: flex;
+    flex-direction: column;
+}
+.help > h2{
+    padding: 10px;
+    margin: auto;
+    font-size: 48px;
+}
+.help > p {
+    padding: 10px;
+    font-size: 28px;
+    margin: auto;
+}
+.help > ul {
+    padding: 10px;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.Get-help {
+    padding: 15px;
+    margin: auto;
+}
+
