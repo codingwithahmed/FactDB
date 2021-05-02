@@ -132,8 +132,7 @@ export class ComplainList extends React.Component {
     axios.get(`/api/submitfact`)
       .then(res => {
         const facts = res.data;
-        
-        this.setState({ facts:facts });
+        this.setState({ facts:facts })
       });
   }
  
