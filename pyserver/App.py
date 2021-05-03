@@ -33,26 +33,48 @@ def home():
     for i in pred:
        newpred = pred[0]
     if newpred > 0.5:
-        x = int(newpred*100) 
+        x = int(newpred*100)
+        result = ''
+        if x > 65:
+            result = 'true'
+        elif x > 50:
+            if x < 65:
+                result = 'Partially True'
+        elif x > 35 :
+            if x < 50 :
+                result = 'Parially False'
+        else : 
+            result = 'False' 
         return jsonify({
             "Headline":ss[0],
-            "Result":x,
+            "Result":result,
             "Para":ss[1],
-            "IsInsult": str(int(insult[0]*100)) + '% is the present of insult in this',
-            "Clickbait": str(int(click[0]*100)) + '% ',
-            "Racsim": str(int(rax[0]*100)) + '% ',
-            "Sarcasm" : str(int(sar[0]*100)) + '%'
+            "IsInsult": str(int(insult[0]*100)) ,
+            "Clickbait": str(int(click[0]*100)) ,
+            "Racsim": str(int(rax[0]*100)) ,
+            "Sarcasm" : str(int(sar[0]*100)) 
         })
     else:
         x = int(newpred*100)
+        result = ''
+        if x > 65:
+            result = 'true'
+        elif x > 50:
+            if x < 65:
+                result = 'Partially True'
+        elif x > 35 :
+            if x < 50 :
+                result = 'Parially False'
+        else : 
+            result = 'False' 
         return jsonify({
             "Headline":ss[0],
-            "Result":x,
+            "Result":result,
             "Para":ss[1],
-            "IsInsult": str(int(insult[0]*100)) + '% is the present of insult in this',
-            "Clickbait": str(int(click[0]*100)) + '% ',
-            "Racsim": str(int(rax[0]*100)) + '% ',
-            "Sarcasm" : str(int(sar[0]*100)) + '%'
+            "IsInsult": str(int(insult[0]*100)) ,
+            "Clickbait": str(int(click[0]*100)) ,
+            "Racsim": str(int(rax[0]*100)) ,
+            "Sarcasm" : str(int(sar[0]*100)) 
         })
     
 @app.route('/tweet', methods= ['POST'])
@@ -73,23 +95,44 @@ def insult():
        newpred = pred[0]
     if newpred > 0.5:
         x = int(newpred*100)
+        if x > 65:
+            result = 'true'
+        elif x > 50:
+            if x < 65:
+                result = 'Partially True'
+        elif x > 35 :
+            if x < 50 :
+                result = 'Parially False'
+        else : 
+            result = 'False' 
         return jsonify({
             "Headline":ss[1],
-            "Result":x,
-            "IsInsult": str(int(insult*100)) + '% is the present of insult in this',
-            "Clickbait": str(int(click*100)) + '% ',
-            "Racsim": str(int(rax*100)) + '% ',
-            "Sarcasm" : str(int(sar*100)) + '%'
+            "Result":result,
+            "IsInsult": str(int(insult*100)) ,
+            "Clickbait": str(int(click*100)) ,
+            "Racsim": str(int(rax*100)) ,
+            "Sarcasm" : str(int(sar*100)) 
         })
     else:
-        x = int(newpred*100) 
+        x = int(newpred*100)
+        result = ''
+        if x > 65:
+            result = 'true'
+        elif x > 50:
+            if x < 65:
+                result = 'Partially True'
+        elif x > 35 :
+            if x < 50 :
+                result = 'Parially False'
+        else : 
+            result = 'False' 
         return jsonify({
             "Headline":ss[1],
-            "Result":x,
-            "IsInsult": str(int(insult*100)) + '% is the present of insult in this',
-            "Clickbait": str(int(click*100)) + '% ',
-            "Racsim": str(int(rax*100)) + '% ',
-            "Sarcasm" : str(int(sar*100)) + '%'
+            "Result":result,
+            "IsInsult": str(int(insult*100)) ,
+            "Clickbait": str(int(click*100)),
+            "Racsim": str(int(rax*100)),
+            "Sarcasm" : str(int(sar*100)) 
         })
 @app.route('/fact', methods= ['POST'])
 def fact():
@@ -109,9 +152,20 @@ def fact():
        newpred = pred[0]
     if newpred > 0.5:
         x = int(newpred*100)
+        result = ''
+        if x > 65:
+            result = 'true'
+        elif x > 50:
+            if x < 65:
+                result = 'Partially True'
+        elif x > 35 :
+            if x < 50 :
+                result = 'Parially False'
+        else : 
+            result = 'False' 
         return jsonify({
             "Headline":ss,
-            "Result":x,
+            "Result":result,
             "IsInsult": int(insult*100),
             "Clickbait": int(click*100),
             "Racsim": int(rax*100),
@@ -119,9 +173,20 @@ def fact():
         })
     else:
         x = int(newpred*100)
+        result = ''
+        if x > 65:
+            result = 'true'
+        elif x > 50:
+            if x < 65:
+                result = 'Partially True'
+        elif x > 35 :
+            if x < 50 :
+                result = 'Parially False'
+        else : 
+            result = 'False' 
         return jsonify({
             "Headline":ss,
-            "Result":x,
+            "Result":result,
             "IsInsult": int(insult*100),
             "Clickbait": int(click*100),
             "Racsim": int(rax*100),

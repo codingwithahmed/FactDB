@@ -72,7 +72,7 @@ export default function Search() {
     return (
         <div className="search">
             <div className="searchSpace center"  >
-                <h1 style={{padding:"15px"}}>Try Factify </h1>
+                <h1 style={{padding:"15px"}}>Try AI Analyzer </h1>
                 <p>Paste any Link below get result</p>
                 
             </div>

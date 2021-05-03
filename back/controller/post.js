@@ -45,13 +45,8 @@ try{
                 }
 
                 try {
-                  await  Post.create(x)
-                    try {
-                         console.log(x+ "Created")
-                         await res.json(x)
-                    } catch (error) {
-                        return next(new ErrorResponse("Server Error ",501))
-                    }
+                    await res.json(x)
+                   
                 } catch (error) {
                     return next(new ErrorResponse("Server Error ",501))
 

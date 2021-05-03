@@ -12,7 +12,7 @@ export default function EditUser() {
   
 const handleEditUser = async () => {
    
-    const res = await axios.put(`/api/admin/updateuser/${email}` , {
+    const res = await axios.put(`/api/api/admin/updateuser/${email}` , {
         email : email,
         username : username
     })

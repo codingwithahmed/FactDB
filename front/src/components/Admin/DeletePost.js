@@ -11,7 +11,7 @@ export default function DeletePost() {
   
 const handleDeleteUser = async () => {
    
-    const res = await axios.delete(`/api/admin/deletepost/${id}` , {
+    const res = await axios.delete(`/api/api/admin/deletepost/${id}` , {
         _id : id,
     })
 

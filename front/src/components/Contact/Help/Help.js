@@ -32,7 +32,7 @@ export default function Help() {
               {header:header , text:text,Email:email,Name:name},
               config
           ).then(() => {
-           setTimeout("location.href = 'http://localhost:3000';",500);
+           setTimeout("location.reload();",500);
           })
 
           

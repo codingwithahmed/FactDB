@@ -25,7 +25,7 @@ const RegisterScreen = () => {
 
     try {
       const { data } = await axios.post(
-        "/api/admin/createpost",
+        "/api/api/admin/createpost",
         {
             Headline:headline,
             link:link,

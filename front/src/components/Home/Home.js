@@ -64,7 +64,7 @@ Let’s build safer digital world together.</h3>
 
 
 <div style={{margin:"auto",width:"fit-content"}}>
-<button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}><Link to="/register" style={{color:"white"}}> Register <small>it's free </small></Link> </button>
+<button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}><Link to="/tryit" style={{color:"white"}}> Try our Ai Analyzer <small>it's free </small></Link> </button>
 </div>
 
         </div>

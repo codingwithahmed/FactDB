@@ -10,7 +10,7 @@ export default function DeleteUser() {
   
 const handleDeleteUser = async () => {
    
-    const res = await axios.delete(`/api/admin/deleteuser/${email}` , {
+    const res = await axios.delete(`/api/api/admin/deleteuser/${email}` , {
         email : email,
     })
 

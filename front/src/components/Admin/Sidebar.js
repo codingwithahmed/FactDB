@@ -2,6 +2,15 @@ import React from 'react'
 import './Sidebar.css'
 import {Link} from 'react-router-dom'
 export default function Sidebar() {
+
+    const handleLogout = () => {
+        if(localStorage.getItem("adminToken")){
+            localStorage.removeItem("adminToken")
+            setTimeout("location.reload()",500)
+
+        }
+    }
+
     return (
         <div className='admin-sidebar'>.
         <span className="admin-logo">
@@ -24,10 +33,17 @@ export default function Sidebar() {
             <hr style={{width:"80%",margin:"auto"}}/>
 
             <ul className='admin-sidebar-list'>
+                <li className='admin-sidebar-list-item'><Link className='admin-sidebar-list-item-link' to='/admin/recomendation'>Set Recomendation</Link></li>
                 <li className='admin-sidebar-list-item'><Link className='admin-sidebar-list-item-link' to='/admin/finduser'>Users list</Link></li>
                 <li className='admin-sidebar-list-item'><Link className='admin-sidebar-list-item-link' to='/admin/info'>Info List</Link></li>
                 <li className='admin-sidebar-list-item'><Link className='admin-sidebar-list-item-link' to='/admin/complain'>Complain List</Link></li>
             </ul>
+            <hr style={{width:"80%",margin:"auto"}}/>
+
+                <ul className='admin-sidebar-list'>
+                    <li className='admin-sidebar-list-item'><Link className='admin-sidebar-list-item-link' onClick={handleLogout}>Logout</Link></li>
+                 </ul>
+
         </div>
     )
 }

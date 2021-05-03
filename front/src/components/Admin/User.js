@@ -13,7 +13,7 @@ export default function User() {
 
    const  handleFindUser = async () => {
     
-        const res = await  axios.get(`/api/admin/finduser/${email}`)
+        const res = await  axios.get(`/api/api/admin/finduser/${email}`)
 
           try {
               if(res.data == null ){

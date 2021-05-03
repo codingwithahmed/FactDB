@@ -22,6 +22,7 @@ import ResetPasswordScreen from './components/Login/ResetPasswordScreen'
 import PrivateScreen from './components/Login/PrivateScreen'
 import PrivateRoute from './components/routing/PrivateRoutes'
 import { createBrowserHistory } from 'history';
+import Tryit from "./components/tryit"
 import Admin from './components/Admin/Admin';
 
 function App() {
@@ -41,6 +42,11 @@ function App() {
   <Route path="/business">
   <Header />
    <Business />
+   <Footer />
+  </Route>
+  <Route path="/tryit">
+  <Header />
+   <Tryit />
    <Footer />
   </Route>
   <Route path="/contact" >

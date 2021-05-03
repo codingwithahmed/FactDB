@@ -3,6 +3,7 @@ const Users = require('../models/User');
 const Post = require('../models/Post')
 const Complain = require('../models/Complain');
 const Infos = require('../models/Info');
+const axios = require("axios")
 var router = express.Router();
 
 
@@ -77,6 +78,7 @@ router.route('/findPost')
 
 
 router.route('/findpost/link')
+
 .post((req,res,next)=>{
   Post.findOne({link:req.body.link})
   .then((user) => {
@@ -84,6 +86,15 @@ router.route('/findpost/link')
     console.log(user)
   })
 });
+
+router.route('/findposts/:id')
+.get((req,res,next) => {
+  Post.findOne({_id:req.params.id})
+  .then((user) => {
+    res.json(user)
+    console.log(user)
+  })
+})
 
 router.route('/updatepost')
 .put((req,res,next) => {
@@ -100,6 +111,9 @@ router.route('/updatepost')
         res.json(user)
     },(err) => next(err)).catch( (err) => next(err))
 });
+
+
+
 router.route('/createpost')
 .post((req,res,next) => {
   Post.create(req.body)
@@ -139,7 +153,26 @@ router.route('/info')
     console.log(info)
     res.statusCode = 200
   })
-})
+});
+
+
+router.route('/login')
+.post((req,res,next) => {
+  const user = {
+    email:"adminanadadmin@admin.join.com",
+    password:"Bw32e1gt54e2d12lo0",
+    msg:"Sucess",
+    token:"Bw32e1gt54e2d12lo0adminanadadmin"
+  }
+  if (user.email == req.body.email && user.password == req.body.password){
+    res.json(user)
+  }
+  else{
+    res.json({msg:"Failed"})
+  }
+});
+
+
 
 
 module.exports = router

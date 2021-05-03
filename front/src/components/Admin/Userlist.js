@@ -9,7 +9,7 @@ export default class PersonList extends React.Component {
 
   
   componentDidMount() {
-    axios.get(`/api/admin/finduser`)
+    axios.get(`/api/api/admin/finduser`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });

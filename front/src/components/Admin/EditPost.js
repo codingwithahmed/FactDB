@@ -18,7 +18,7 @@ export default function EditUser() {
     
 const handleEditPost = async () => {
    
-    const res = await axios.put(`/api/admin/updatepost` , {
+    const res = await axios.put(`/api/api/admin/updatepost` , {
         Headline : Headline,
         Text : Text,
         link : link,
@@ -77,7 +77,7 @@ const zas =   <>
  </div>
  <br />
  <div>
- <button  className="admin-btn">Racsim</button>
+ <button  className="admin-btn">Racism</button>
  <input  className='admin-input '  onChange = {(e) => {setracsim(e.target.value)}} />
  </div>
  <br />

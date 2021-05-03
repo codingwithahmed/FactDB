@@ -9,7 +9,7 @@ export default class ComplainList extends React.Component {
 
   
   componentDidMount() {
-    axios.get(`/api/admin/info`)
+    axios.get(`/api/api/admin/info`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });

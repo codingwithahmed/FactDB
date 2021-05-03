@@ -12,12 +12,17 @@ import Post from './Post'
 import EditPost from './EditPost'
 import CreatePost from './CreatePost'
 import DeletePost from './DeletePost'
+import Recomendded from './Recomended'
 export default function Main() {
     return (
         <div className="admin-main">
 
           <Route exact path='/admin/info'>
           <Info />
+          </Route>
+
+          <Route exact path='/admin/recomendation'>
+          <Recomendded />
           </Route>
 
           <Route exact path='/admin/complain'>

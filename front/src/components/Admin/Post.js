@@ -13,7 +13,7 @@ export default function User() {
 
    const  handleFindPostLink = async () => {
     
-        const res = await  axios.post(`/api/admin/findpost/link`,{
+        const res = await  axios.post(`/api/api/admin/findpost/link`,{
           link : link
         })
 
