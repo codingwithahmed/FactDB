@@ -7,7 +7,7 @@ export default function Index() {
     const [walletaddress,setWalletaddress] = useState("")
     useEffect(() => {
         const getData = aysnc =>  {
-            axios.post("/api/user/" , {
+            axios.post("/api/api/user/" , {
                 email:localStorage.getItem("email")
             }).then((user => {
                 console.log(user)
@@ -21,7 +21,7 @@ export default function Index() {
         getData()
     }, [])
     const handleSave = (username,email,walletaddress) => {
-      axios.put("/api/user/signup",{
+      axios.put("/api/api/user/signup",{
         username,email,walletaddress
       })
     }

@@ -91,7 +91,7 @@ export default function StickyHeadTable() {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const fetchData = async () => {
     const result = await axios(
-      '/api/check',
+      '/api/api/check',
     );
     await setData(result.data.reverse())
 
