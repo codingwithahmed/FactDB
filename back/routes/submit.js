@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 router.route('/')
 .get((req,res,next) => {
     Submit.find((err,submit) => {
+        
     console.log(submit.filter(fact => fact.users.length  > 5))
     res.json( submit.filter(fact => fact.users.length  < 5))    
     res.sendStatus = 200
