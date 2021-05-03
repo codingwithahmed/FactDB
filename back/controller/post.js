@@ -6,22 +6,7 @@ exports.postcreate = async (req ,res,next) => {
     const { link } = req.body
 
     try {
-        const post = await Post.findOne({link})
-        if(post){
-            console.log(post+ "Found")
-            res.json({
-                Headline:post.Headline,
-                desc:post.desc,
-                link:post.link,
-                Clickbait:post.Clickbait,
-                IsInsult : post.IsInsult,
-                Result:post.Result,
-                Sarcasm : post.Sarcasm,
-                Racsim : post.Racsim
-            })
-        }
-
-        if(!post){
+        
 try{
           const a = await  axios({
                 method:'post',
@@ -62,7 +47,7 @@ try{
         }
     }
      
-    } catch (error) {
+     catch (error) {
         return(new ErrorResponse("Server Couldn't get Data",505))
     }
 }
