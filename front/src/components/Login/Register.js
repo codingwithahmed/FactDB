@@ -39,11 +39,12 @@ const RegisterScreen = ({ history }) => {
           username,
           email,
           password,
-        },
+        },  
         config
       );
 
       localStorage.setItem("authToken", data.token);
+      localStorage.setItem("email", email);
 
       history.push("/dashboard");
     } catch (error) {

@@ -1,58 +1,14 @@
 import React,{useState,useEffect} from 'react'
 import './MainContentDashBoard.css'
 import {Row,Col} from 'react-bootstrap'
-import {ComplainList} from './Tweet'
+import {ComplainList} from './Check'
 import axios from 'axios'
-
-  
-function MainContentDashBoardcard (props) {
-
-    return(
-        <div className={props.class}>
-       
-
-           <div className="MainContentDashBoardcard-info">
-               <div className="MainContentDashBoardcard-text">
-               <h4 className="MainContentDashBoardcard-headline">{props.headline}</h4>
-               <p className="MainContentDashBoardcard-desc">{props.shortdesc}</p>
-               </div>
-           </div>
-
-           <div>
-               <p>Take to the page</p>
-           </div>
-        </div>
-    )
-}
-
-
-function Histroy (props) {
-
-    return (
-     <Row>
-         <Col>
-         <MainContentDashBoardcard
-            shortdesc={props.shortdesc1}
-            headline={props.headline1} veiws={'145M'}  class=" histtab"/>
-
-         </Col>
-         
-         <Col>
-         <MainContentDashBoardcard
-             shortdesc={props.shortdesc2}
-             headline={props.headline2} veiws={'145M'}  class=" histtab"/>
- 
-         </Col>
-     </Row>
-    );
-}
-
 
 export default function MainContentDashBoard() {
 
     const [language,setLanguage] = useState('English')
     const [factcoin, setFactcoin] = useState('')
-
+    const [loader , setLoader] = useState("")
     useEffect(() => {
         
     const getFact = async () =>  {
@@ -64,9 +20,9 @@ export default function MainContentDashBoard() {
     getFact()
     }, [])
     return (
-        <div className="MainContentDashBoard" style={{margin:"auto",width:"fit-content"}}>
+        <div className="MainContentDashBoard" >
 
-<div className='row' style={{padding:"15px",minWidth:"850px"}}>
+<div className='MainContentDashBoard-top-row' >
     <div>
       <h1> FactDB</h1>
     </div>
@@ -83,9 +39,9 @@ export default function MainContentDashBoard() {
     </div>
     <h3>Check Fact</h3>
 
-           <div className="Histroy">
+           <div className="row">
 
- <div className='MainContentDashBoardrow'>
+ <div className='row'>
 <ComplainList  language={language} />
             </div>
 
@@ -109,7 +65,7 @@ export default function MainContentDashBoard() {
              </div>
             
 
-            <div className='MainContentDashBoardrow'>
+            <div className='row'>
             
             <div className="dsahfullbox">
 

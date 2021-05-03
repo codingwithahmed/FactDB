@@ -1,0 +1,23 @@
+.setting{
+    width:80%;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.setting > .row,.col {
+    margin: 15px;
+}
+.setting > .row > .col {
+    margin: 0;
+}
+.setting-input{
+    padding: 15px;
+}
+.setting-input-half {
+    width: 100%;
+}
+@media screen and (max-width:425px) {
+    .setting > .row > .col > .btn {
+        margin: 10px;
+    }
+}

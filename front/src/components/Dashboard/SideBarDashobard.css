@@ -79,10 +79,14 @@
     .sidebardashboard{
         text-align: center;
         width: 300px;
+        margin: auto;
     }
     .sidebardashboard-menu-item > p{
         font-size: x-small;
         width: 50px;
+    }
+    .sidebardashboard-menu-list{
+        margin-left: -20px;
     }
     .MuiIcon-fontSizeLarge{
         width: 2px;

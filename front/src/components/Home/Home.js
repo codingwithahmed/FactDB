@@ -1,17 +1,7 @@
 import React,{useEffect} from 'react'
 import Amand from './assets/Amd.png'
-import Menu from './assets/scr.svg'
-import SocialMedia from './assets/Blogs.svg'
-import Blogs from './assets/Socialmed.svg'
-import Press1 from'./assets/press.png'
-import Press2 from'./assets/press_02.png'
 import './Home.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import HowitWorks from './HowitWorks'
 import {Link} from 'react-router-dom'
 import {ana} from '../../firebaseconfig'
@@ -74,7 +64,7 @@ Let’s build safer digital world together.</h3>
 
 
 <div style={{margin:"auto",width:"fit-content"}}>
-<button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}>Add Browser Extension <small>it's free </small> </button>
+<button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}><Link to="/register" style={{color:"white"}}> Register <small>it's free </small></Link> </button>
 </div>
 
         </div>

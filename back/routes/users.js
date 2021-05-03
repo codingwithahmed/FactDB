@@ -8,12 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.route('/signup')
-.get((req,res,next) => {
-  Users.find((err,user) => {
-    res.json(user)
-    res.sendStatus = 200
-  }, ((err) => next(err)).catch( (err) => next(err)))
-})
+
 .post((req,res,next) => {
   Users.create(req.body)
   .then( (user) => {
@@ -21,7 +16,26 @@ router.route('/signup')
     res.statusCode = 200
     res.send(user.username)
   },((err) => next(err)).catch( (err) => next(err)) )
+})
+
+.put((req,res,next) => {
+  Users.findOne({email:req.body.email})
+  .then((user) => {
+    user.walletaddress = req.body.walletaddress
+    user.username = req.body.username
+    user.email = req.body.email
+    user.save()
+    .then((user) => {
+      console.log(user)
+      res.json(user)
+    }, (err) => next(err)).catch((err) => next(err))
+  }, (err) => next(err)).catch((err) => next(err))
 });
 
-
+router.route("/")
+.post((req,res,next) => {
+  Users.findOne({email:req.body.email}).then((user) => {
+    res.status(202).json(user)
+  }, (err) => next(err)).catch((err) => next(err))
+})
 module.exports = router;

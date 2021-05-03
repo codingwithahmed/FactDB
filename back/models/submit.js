@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const submitSchema = new Schema ({
   
-  
+    username:String,
     link:{
         type:String
     },

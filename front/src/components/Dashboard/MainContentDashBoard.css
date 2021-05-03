@@ -1,147 +1,48 @@
 .MainContentDashBoard{
     padding: 25px;
-}
-.MainContentDashBoardrow{
-    display: flex;
-    flex-direction: row;
-}
-.yellow{
-  background: linear-gradient(45deg,  rgb(89, 180, 255) 30%, rgb(47, 149, 245) 90%);
-  border: 0;
-  border-radius: 3px;
-  box-shadow: 0px 3px 5px 2px rgba(56, 5, 90, 0.37);
-  color: white;
-  height: 250px;
-  width: 350px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.blue{
-    background: linear-gradient(45deg, #7789e0 30%, #465abe 90%);
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0px 3px 5px 2px #5d72db;
-    color: white;
-    height: 250px;
-    width: 350px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 15px;
-  }
-  .histtab{
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0px 3px 50px 2px #00000013;
-    color: white;
-    height: 250px;
-    width: 350px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 15px;
-    color: black;
-      background: transparent;
-    margin-top: 10px;
-  }
-  .MainContentDashBoardcard-veiw{
-      border-radius: 15px ;
-      border: 1px solid white;
-      display: flex;
-      width: 150px;
-      justify-content: space-around;
-      flex-direction: row;
-      margin: auto;
-      height: 30px;
-  }
-  .MainContentDashBoardcard-img{
-      height: 100px;
-      width: 100px;
-  }
-  .MainContentDashBoardcard-image{
-    flex: 1;
     margin: auto;
-
-  }
-  .MainContentDashBoardcard-info{
+}
+.MainContentDashBoard-top-row{
+     padding: 15px;
+     width: 850px;
      display: flex;
-     flex-direction: row-reverse;
-  }
-  .MainContentDashBoardcard-text{
-      flex: 2;
-  }
-  .MainContentDashBoardcard-veiw-icon{
-      margin: auto;
-  }
-  .MainContentDashBoardcard-veiw-text{
-      margin: auto;
-  }
+     flex-direction: row;
+}
 .Histroy{
-   display: flex;
-   flex-direction: row;
-  
-}
-.Histroy:-webkit-full-screen {
-  display: none;
-}
-.sphere{
-  height: 100px;
-  width: 100px;
-  border-radius: 1500px;
-  background-color: #5d72db;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
 }
 .dashbox{
-   width: 250px;
-   height: 250px;
-   margin: 10px;
-   background-color: white;
-   padding: 5px;
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
-   border-radius: 15px;
-}
-.dsahfullbox{
-  padding: 25px;
-  width: 500px;
-  border-radius: 15px;
-  height: 500px;
+  height: 300px;
+  width: 250px;
+  padding: 15px;
+  text-align: center;
   background-color: white;
+  margin: auto;
+  margin: 15px;
 }
+
+.dsahfullbox{
+  height: 550px;
+  width: 550px;
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  margin: auto;
+  margin: 15px;
+}
+
   @media screen and (max-width:425px){
-      .blue{
-          width: 250px;
-          height: 300px;
-          margin-left: auto;
-          margin-top: 30px;
+.MainContentDashBoard-top-row{
+  width: 270px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+      .dsahfullbox{
+        width: 270px;
+        display: none;
       }
-      .histtab{
-        width: 250px;
-        height: 300px;
-        margin-left: auto;
-        margin-top: 30px;
+      .dashbox{
+        width: 270px;
       }
-      .yellow{
-        width: 250px;
-        height: 300px;
-      }
-      .MainContentDashBoardrow{
-          flex-direction: column;
-      }
-      .MainContentDashBoardcard-text{
-          margin-right: 5px;
-      }
-      
   }

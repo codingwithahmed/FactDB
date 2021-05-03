@@ -8,13 +8,14 @@ const mongoose = require('mongoose')
 router.route('/')
 .get((req,res,next) => {
     Submit.find((err,submit) => {
-    res.json(submit)
+    console.log(submit.filter(fact => fact.users.length  > 5))
+    res.json( submit.filter(fact => fact.users.length  < 5))    
     res.sendStatus = 200
   })
 })
 .post((req,res,next) => {
     Submit.create(req.body)
-    Users.findOne({email:req.body.user} , (err,user) =>{
+    Users.findOne({email:req.body.username} , (err,user) =>{
       if(user.factsubmit == 10 ) {
            user.factcoin++
            user.factsubmit = 0
@@ -35,7 +36,7 @@ router.route('/')
   .then( (submited) => {
     res.json(submited)
     res.statusCode = 200
-   })
+   }, (err) => next(err)).catch((err) => next(err))
 });
 
 

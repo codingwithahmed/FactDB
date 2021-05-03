@@ -84,7 +84,7 @@ export default function Tweet() {
 */
 import React,{useEffect, useState} from 'react';
 import axios from 'axios';
-import './Tweet.css'
+import './Check.css'
 
 const Card = (props) => {
 const [comment,setComment] = useState('');
@@ -101,7 +101,7 @@ const [feedback,setFeedback] = useState('Agree');
     return(
       <form onSubmit={handleSubmit} className='check-contaier' >
       <div className='row'>  
-        <div><h3>@username</h3></div>
+        <div><h3># {props.username}</h3></div>
         <h1>{props.index}</h1>
          <select id="Agree" name="Agree" value = 'Agree' className='checkerlang' onChange={(e) => setFeedback(e.target.value)}>
 <option value="Agree">Agree</option>
@@ -110,9 +110,10 @@ const [feedback,setFeedback] = useState('Agree');
 <option value="DisAgree">DisAgree</option>
 </select></div>
      <p style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.desc}</p>
-     <p style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.link}</p>
-     <div>
-     <button className='btn' type='submit'>Submit</button>
+     <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.link}</a>
+     <div className="checker-row">
+          <button className='btn' type='submit'>Submit</button>
+
      <input className='checker-input' onChange={(e) => { setComment(e.target.value) } }  />
        </div>
      </form>
@@ -142,7 +143,7 @@ export class ComplainList extends React.Component {
     return (
       <div className='checker' style={{margin:"auto",width:"100%"}}> 
         { 
-             this.state.facts.filter(fact => fact.language === this.props.language  & fact.users.includes(localStorage.getItem("email")) !== localStorage.getItem("email")).map((fact,index) =><Card desc={fact.desc} link={fact.link}  /> )
+             this.state.facts.filter(fact => fact.language === this.props.language  & !fact.users.includes(localStorage.getItem("email"))).map((fact,index) =><Card desc={fact.desc} link={fact.link} username={fact.username} /> )
   }
       </div>
            
@@ -167,7 +168,7 @@ export default  function Tweet() {
 
   return(
     <div >
-               <div className='row' style={{padding:"15px",minWidth:"850px"}}>
+               <div className='row'>
     <div>
       <h1> FactDB</h1>
     </div>
@@ -182,15 +183,15 @@ export default  function Tweet() {
 </form>
 </div>
     </div>
-<div className='row' style={{width:"1025px"}}>
-  <div className="col">
+<div className='row'>
+  <div className="col" >
       {
-        start.filter(fact => fact.language === language  & fact.user !== localStorage.getItem("email")).map((fact) =><Card desc={fact.desc} link={fact.link}  /> )
+        start.filter(fact => fact.language === language  & !fact.users.includes(localStorage.getItem("email"))).map((fact) =><Card desc={fact.desc} link={fact.link}  /> )
       }
   </div>
   <div  className="col">
   {
-        end.filter(fact => fact.language === language  & fact.user !== localStorage.getItem("email")).map((fact) =><Card desc={fact.desc} link={fact.link}  /> )
+        end.filter(fact => fact.language === language  & !fact.users.includes(localStorage.getItem("email"))).map((fact) =><Card desc={fact.desc} link={fact.link}  /> )
       }
   </div>
   

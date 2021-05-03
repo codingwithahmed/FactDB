@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
 import './HowitWorks.css'
 import Logo from './assets/logo.svg'
-import ExtensionStep1 from './assets/ExtensionStep1.svg'
-import ExtensionStep2 from './assets/ExtensionStep2.svg'
-import ExtensionStep3 from './assets/ExtensionStep3.svg'
-import {Link,Route,Switch} from 'react-router-dom'
-import SearchBar from './assets/search.svg'
-import Factify from './assets/Factify.svg'
-import Blogs from './assets/Socialmed.svg'
-
+import Illustraion3 from "./assets/Illustration 3.jpeg"
+import Illustraion from "./assets/Ilustaration 2.jpeg"
+import Illustraion2 from "./assets/Illustration.jpeg"
 function Box() {
  return(
      <div className="how-it-works-right-box">
@@ -30,8 +25,8 @@ Let’s build safer digital world together. </p>
 
 const Step = (props) => {
     return(
-        <div className='rect-col'>
-        <img src={props.src} className="rect-col-img" alt="" />
+        <div className='rect-col' >
+        <img src={props.src} className="rect-col-img" alt="" style={{marginBottom:"25px"}}/>
         <h3 className="rect-col-step">{props.step}</h3>
         <p className="rect-col-desc">{props.desc}</p>
      </div>
@@ -73,64 +68,22 @@ export default class HowitWorks extends Component {
             <div className="howitworks">
                 <Box />
                
-               <Switch >
-
-                   <Route path="/how-it-work-1">
-
-                <Rectangle 
-                Step3desc="Works instantly and fact-checks information"
-                 Step2desc=" Paste information in factify search bar"
-                  Step1desc=" Copy what you want to fact-check"
-                  head1="Copy information"
-                  head3="Result"
-                  head2="Paste information"
-                  Step1={ExtensionStep1}
-                  Step2={ExtensionStep2}
-                  Step3={ExtensionStep3}
-                  />
-                     </Route>
-
-
-                     <Route path="/how-it-work-2">
-
-<Rectangle 
-head1="Sign-up with social media"
-head2="Surf like usual"
-head3="Result"
-Step3desc="Works instantly and fact-checks information 
-"
- Step2desc="we will be your fact-checking companion, As you
- surf the website. "
-  Step1desc="- Sign-up with your social media
-  accounts "
-  Step1={ExtensionStep1}
-  Step2={ExtensionStep2}
-  Step3={ExtensionStep3}
-  />
-     </Route>
-
-
-     <Route path="/">
 
 
     
 
      <Rectangle 
-Step3desc="Add browser extension with few clicks"
- Step2desc="we will be your fact-checking companion, surf
- any website as usual.
+Step3desc="Withdraw your earning"
+ Step2desc="Start To Check Facts 
  "
-  Step1desc="Add browser extension with few clicks"
-  head1="Add browser extension"
-  head2="surf like usual"
-  head3="Result"
-  Step1={ExtensionStep1}
-  Step2={ExtensionStep2}
-  Step3={ExtensionStep3}
+  Step1desc="Register to factDb to start"
+  head1="Register"
+  head2="Check Fact"
+  head3="Earn"
+  Step1={Illustraion}
+  Step2={Illustraion2}
+  Step3={Illustraion3}
   />
-     </Route>
-
-               </Switch>
 
             </div>
             

@@ -8,16 +8,20 @@ router.post('/', (req, res, next) =>  {
          if(!fact) {
              res.json({
                  desc:"NO SUCH FACT EXIST",
-                 success:"true"
+                 success:"false",
+                 feedback:["Don't Exist","Don't Exist"],
+                 Comment:["Don't Exist"]
              })
          }
          else {
              res.json({
                  desc:fact.desc,
-                 success:"true"
+                 success:"true",
+                 feedback:fact.feedback,
+                 Comment:fact.Comment
              })
          }
-     })
+     }, (err) => next(err)).catch((err) => next(err))
 });
 
 module.exports = router;

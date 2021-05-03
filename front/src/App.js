@@ -53,6 +53,7 @@ function App() {
     <Ledger />
     <Footer />
   </Route>
+
   <Route path="/submit">
   <Header />
     <Submits />

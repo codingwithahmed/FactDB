@@ -33,7 +33,8 @@ const UsersSchema = new Schema({
      resetExpiretoken: Date,
      factcoin:{type:Number,default:0},
      factcheck:{type:Number,default:0},
-     factsubmit:{type:Number,default:0}
+     factsubmit:{type:Number,default:0},
+     walletaddress:{type:String}
 
 } , {
     timestamps:true

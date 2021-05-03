@@ -14,17 +14,17 @@ export default function SideBarDashobard() {
 
  
  
-            <div className=" sidebardashboard-item sidebardashboard-menu-list">
+            <div className=" sidebardashboard-menu-list">
 
                <Link to="/dashboard" className="sidebardashboard-menu-item">
                 <p>Dashboard</p>
                  <HomeIcon  className="sidebardashboard-Icon"/>
                </Link>
-               <Link to="/dashboard/tweet" className="sidebardashboard-menu-item">
+               <Link to="/dashboard/check" className="sidebardashboard-menu-item">
                <p>Check</p>
                 <SearchIcon className="sidebardashboard-Icon"/>
                </Link>
-               <Link to="/dashboard/search" className="sidebardashboard-menu-item">
+               <Link to="/dashboard/submit" className="sidebardashboard-menu-item">
               <p> Submit </p> 
                  <SocialMedaIcon className="sidebardashboard-Icon"/>
                </Link>
@@ -32,10 +32,10 @@ export default function SideBarDashobard() {
                <p> Help </p> 
                  <HelpIcon className="sidebardashboard-Icon"/>
                </Link>
-             <div className=" sidebardashboard-menu-item" style={{display:"none"}}>
-                <p>Setting</p>
+               <Link className="sidebardashboard-menu-item" to="/dashboard/setting">
+               <p> Setting </p> 
                  <SettingIcon className="sidebardashboard-Icon"/>
-               </div>
+               </Link>
 
             </div>
             

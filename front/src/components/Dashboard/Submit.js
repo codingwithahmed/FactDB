@@ -1,7 +1,7 @@
 import React ,{useState,useEffect} from 'react'
 import SearchRounded from '@material-ui/icons/SearchRounded'
 import axios from "axios"
-import './Search.css'
+import './Submit.css'
 export default function Search() {
  
     const [link,setLink] = useState(null)
@@ -34,7 +34,7 @@ export default function Search() {
               {link:link,
                 desc:para,
                 language:language,
-                user:"chupke@g.com"},
+                username:localStorage.getItem("email")},
               config
           ).then((post) => {
               setPara(post.data.desc)

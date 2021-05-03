@@ -38,7 +38,7 @@ router.put('/', function(req, res, next) {
              
             })
         
-    })
+    }, (err) => next(err)).catch((err) => next(err))
      })
      
 }) ;

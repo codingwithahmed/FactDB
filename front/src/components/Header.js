@@ -11,7 +11,7 @@ export default function Header() {
            
 
             <div className="menu">
-           <Link to="/business" className=" " style={{marginLeft:"60px"}}><h3 className="" ><small>Ledger</small></h3></Link> 
+           <Link to="/ledger" className=" " style={{marginLeft:"60px"}}><h3 className="" ><small>Ledger</small></h3></Link> 
             <button className="SignUp menu-item" style={{marginLeft:"60px"}}> <Link to="/register">  Sign-In </Link></button>
             </div>
 

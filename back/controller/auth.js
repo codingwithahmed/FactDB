@@ -10,7 +10,7 @@ exports.register = async (req,res,next) => {
 
     try {
         const user = await User.create({
-            username , email , password,factcoin:0,factcheck:1,factsubmit: 0
+            username , email , password,factcoin:0,factcheck:1,factsubmit: 0,walletaddress:"Enter Wallet Address"
         })
         sendToken(user,201,res)
     } catch (error) {
