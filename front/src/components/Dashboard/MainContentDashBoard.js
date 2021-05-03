@@ -12,7 +12,7 @@ export default function MainContentDashBoard() {
     useEffect(() => {
         
     const getFact = async () =>  {
-        axios.post("api/check/factcoin" , {email:localStorage.getItem("email")}).then((fact) => {
+        axios.post("/api/api/check/factcoin" , {email:localStorage.getItem("email")}).then((fact) => {
           setFactcoin(fact.data.factcoin)
         })
             

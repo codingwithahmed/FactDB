@@ -7,7 +7,7 @@ export default function Index() {
 
     const fetchData = async () => {
       const result = await axios(
-        '/api/check',
+        '/api/api/check',
       );
  
       setData(result.data);

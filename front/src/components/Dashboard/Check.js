@@ -90,7 +90,7 @@ const Card = (props) => {
 const [comment,setComment] = useState('');
 const [feedback,setFeedback] = useState('Agree');
   const  handleSubmit =   () => {
-    axios.put('/api/check',{
+    axios.put('/api/api/check',{
       link:props.link,
       Comment:comment,
       feedback:feedback,
@@ -130,7 +130,7 @@ export class ComplainList extends React.Component {
 
   
   componentDidMount() {
-    axios.get(`/api/submitfact`)
+    axios.get(`/api/api/submitfact`)
       .then(res => {
         const facts = res.data;
         this.setState({ facts:facts })
@@ -157,7 +157,7 @@ export default  function Tweet() {
   const [start,setStart] = useState([])
   const [end,setEnd] = useState([])
   const fetchData = async () => {
-    const result = await axios.get(`/api/submitfact`)
+    const result = await axios.get(`/api/api/submitfact`)
     await setEnd(result.data.reverse().splice(Math.floor(result.data.length/2),result.data.length))
     await setStart(result.data.reverse().splice(0,Math.floor(result.data.length/2)))
   };

@@ -8,7 +8,7 @@ export default function Index() {
     const [comment,setComment] = useState([]);
 
     const search = () => {
-          axios.post('/api/search',{
+          axios.post('/api/api/search',{
               link:link
           }).then((fact) => {
               setDesc(fact.data.desc)

@@ -30,7 +30,7 @@ export default function Search() {
               setLanguage(null)
             }
           const {twee} = await axios.post(
-              '/api/submitfact',
+              '/api/api/submitfact',
               {link:link,
                 desc:para,
                 language:language,
