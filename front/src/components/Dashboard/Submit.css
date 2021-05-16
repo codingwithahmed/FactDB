@@ -1,6 +1,6 @@
 .Searchsearchbox{
-    background-color: white;
-    width: 850px;
+background-color: white;
+width: 850px;
 margin: auto;
 border-radius: 15px;
 display: flex;
@@ -25,7 +25,7 @@ box-shadow: 0px 0px 54px 35px #00000005;
     border-top-right-radius:5px ;
 }
 .Searchtextarea{
-    height: 300px;
+    height: 100px;
     width: 100%;
     outline: none;
     border: none;

@@ -18,7 +18,7 @@ export default function Help() {
               };
 
             const {help} = await axios.post(
-              '/api/admin/complain',
+              '/api/api/admin/complain',
               {header:header , text:text},
               config
           )
@@ -34,10 +34,11 @@ export default function Help() {
             <p>Have any questions? We’d love to hear from you.</p>
 
             <ul>
-                <li><Button  onClick={(e) =>setHeader('Support') }>Support</Button></li>
-                <li><Button onClick={(e) =>setHeader('Legal Support') }>Legal Support</Button></li>
-                <li><Button onClick={(e) =>setHeader('Business Inquiry') }>Business Inquiry</Button></li>
-                <li><Button onClick={(e) =>setHeader('Investor Relation') }>Investor Relation</Button></li>
+                <li><Button  onClick={(e) =>setHeader('Support') } style={{fontSize:"12px"}}>Support</Button></li>
+                <li><Button  onClick={(e) =>setHeader('Community Relation') } style={{fontSize:"12px"}}>Community </Button></li>
+                <li><Button onClick={(e) =>setHeader('Legal Support') } style={{fontSize:"12px"}}>Legal </Button></li>
+                <li><Button onClick={(e) =>setHeader('Business Inquiry') } style={{fontSize:"12px"}}>Business </Button></li>
+                <li><Button onClick={(e) =>setHeader('Investor Relation') } style={{fontSize:"12px"}}>Investor </Button></li>
             </ul>
 
             <textarea className="text_input" onChange = {(e) => setText(e.target.value)}>

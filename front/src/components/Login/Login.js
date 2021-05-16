@@ -29,9 +29,10 @@ const LoginScreen = ({ history }) => {
         { email, password },
         config
       );
-
+      console.log(data)
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("email",email)
+      localStorage.setItem("username",data.user)
       history.push("/dashboard");
     } catch (error) {
       setError(error.response.data.error);
@@ -75,6 +76,12 @@ const LoginScreen = ({ history }) => {
             value={password}
             tabIndex={2}
           />
+          <div style={{display:"flex", flexDirection:"row"}}>
+          <input  type="checkbox" name="terms" style={{flex:1}}/>
+          <label htmlFor="terms"  style={{flex:9,verticalAlign:"middle"}}>By Signing you are accept terms and conditions</label>
+          </div>
+          
+
         </div>
         <button type="submit" className="btn btn-primary">
           Login

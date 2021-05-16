@@ -9,6 +9,7 @@ export default function User() {
     const [username, setUsername] = useState('')
     const[inp,setInput] = useState('')
     const [id , setId ] = useState('')
+    const [data,setData] = useState({})
     const zas =  <div> <h1>Fuc asd k</h1> </div>
 
    const  handleFindUser = async () => {
@@ -25,6 +26,8 @@ export default function User() {
                   setInput(res.data.email)             
                   setUsername(res.data.username)
                   setId(res.data._id)
+                  setData(res.data)
+
               }
           } catch (error) {
               console.log(error)
@@ -39,9 +42,14 @@ export default function User() {
             <input className='admin-input '  onChange = {(e) => {setEmai(e.target.value)}} />
             <button onClick={handleFindUser} className="admin-btn">Find User</button>
             </div>
-                       <h2>Username : {username}</h2>
+        <h2>Username : {username}</h2>
+          <h2>FactCoin : {data.factcoin}</h2>
           <h2>Email : {inp}</h2>
           <h2>Database ID : {id}</h2>
+          <h2>walletaddress : {data.walletaddress}</h2>
+          <h2>Fact Submitted : {data.factsubmit}</h2>
+          <h2>Fact Checked : {data.factcheck}</h2>
+
             </div>
         </div>
     )

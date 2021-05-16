@@ -95,26 +95,29 @@ const [feedback,setFeedback] = useState('Agree');
       Comment:comment,
       feedback:feedback,
       desc:props.desc,
-      user:localStorage.getItem("email")
+      user:localStorage.getItem("email"),
+      username:localStorage.getItem("username")
     }).then((x)=> console.log(x.data))
   }
     return(
       <form onSubmit={handleSubmit} className='check-contaier' >
       <div className='row'>  
-        <div><h3># {props.username}</h3></div>
+        <div><h3>@{props.username}</h3></div>
         <h1>{props.index}</h1>
-         <select id="Agree" name="Agree" value = 'Agree' className='checkerlang' onChange={(e) => setFeedback(e.target.value)}>
-<option value="Agree">Agree</option>
-<option value="Disagree">DisAgree</option>
-<option value="misinformation">Misinformation</option>
-<option value="DisAgree">DisAgree</option>
+         <select id="Agree" name="Agree" required  className='checkerlang' onChange={(e) => setFeedback(e.target.value)} defaultValue="True" >
+<option value="Propoganda">Propoganda</option>
+<option value="True">True</option>
+<option value="False">False</option>
+<option value="Misinformation">Misinformation</option>
+<option value="Disinformation">Disinformation</option>
+<option value="Hate Speech">Hate Speech</option>
 </select></div>
      <p style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.desc}</p>
      <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.link}</a>
-     <div className="checker-row">
-          <button className='btn' type='submit'>Submit</button>
+     <div className="checker-col">
+          <button className='btn btn-checker' type='submit'>Submit</button>
 
-     <input className='checker-input' onChange={(e) => { setComment(e.target.value) } }  />
+     <textarea className='checker-input' placeholder="add comment" onChange={(e) => { setComment(e.target.value) } }  required/>
        </div>
      </form>
     )
@@ -130,10 +133,23 @@ export class ComplainList extends React.Component {
 
   
   componentDidMount() {
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;  
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+    
+      return array;
+    }
+
     axios.get(`/api/api/submitfact`)
       .then(res => {
         const facts = res.data;
-        this.setState({ facts:facts })
+        this.setState({ facts:shuffle(facts) })
       });
   }
  
@@ -141,9 +157,9 @@ export class ComplainList extends React.Component {
   render() {
 
     return (
-      <div className='checker' style={{margin:"auto",width:"100%"}}> 
+      <div className='checker' > 
         { 
-             this.state.facts.filter(fact => fact.language === this.props.language  & !fact.users.includes(localStorage.getItem("email"))).map((fact,index) =><Card desc={fact.desc} link={fact.link} username={fact.username} /> )
+             this.state.facts.filter(fact => fact.language === this.props.language  & !fact.users.includes(localStorage.getItem("email"))).reverse().map((fact,index) =><Card desc={fact.desc} link={fact.link} username={fact.username} /> )
   }
       </div>
            
@@ -152,6 +168,7 @@ export class ComplainList extends React.Component {
 }
 
 
+/*
 export default  function Tweet() {
   const [language,setLanguage] = useState('English')
   const [start,setStart] = useState([])
@@ -200,4 +217,5 @@ export default  function Tweet() {
 
     </div>
   )
-}
+} 
+*/

@@ -69,6 +69,11 @@ exports.forgotpassword = async (req,res,next) => {
           const resetUrl = process.env.CLIENT_URL + `/resetpassword/${resettoken}`;
           
           const message  = `
+          <style>
+          h1 {
+            color:red;
+          }
+          </style>
           <h1> 
           You have request a password reset
           </h1>

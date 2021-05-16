@@ -35,9 +35,8 @@ export default function Home() {
            <div className="">
               <h1 className="heading"> Crowd sourced<br />
 fact-checking platform. </h1>
-              <h3 className="subheading">Report misinformation, disinformation <br />
-and fake news online and earn FactCoin.<br />
-Let’s build safer digital world together.</h3>
+              <h3 className="subheading">Check Social media post, Youtube video <br /> 
+              or any web link and earn FactCoin.  Every fact-check is <br />available on Public Ledger. Let’s build safer digital world <br /> together. </h3>
 <button className="btn-outline">
   <Link to='/login' className="btn-link"> Sign up</Link>
 </button>
@@ -60,11 +59,11 @@ Let’s build safer digital world together.</h3>
 
 
 
-<h2 className="heading center">Earn while doing the right thing</h2>
+<h2 className="heading center">Over 7000 Languages, Let’s try truth</h2>
 
 
 <div style={{margin:"auto",width:"fit-content"}}>
-<button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}><Link to="/tryit" style={{color:"white"}}> Try our Ai Analyzer <small>it's free </small></Link> </button>
+<button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}><Link to="/tryit" style={{color:"white"}}> Try AI fact-checker </Link> </button>
 </div>
 
         </div>

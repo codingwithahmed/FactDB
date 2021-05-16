@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const ledgerSchema = new Schema ({
      feedback:String,
      Comment:String,
-     link:String
+     link:String,
+     username:String
 })
 
 var Ledgers = mongoose.model('Ledger', ledgerSchema)

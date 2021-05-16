@@ -1,6 +1,6 @@
 const express = require('express')
 const Users = require('../models/User');
-const Post = require('../models/Post')
+const Post = require('../models/submit')
 const Complain = require('../models/Complain');
 const Infos = require('../models/Info');
 const axios = require("axios")

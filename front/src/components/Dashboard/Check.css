@@ -25,23 +25,35 @@
 }
 .check-contaier{
     padding: 15px;
-    margin: 15px;
+    margin: 55px;
     display: flex;
     flex-direction: column;
     width: 450px;
     min-height: 150px;
     border-radius: 5px;
-    background-color: #4267B210;
+    box-shadow: 0px 0px 35px 5px rgb(241, 241, 241);     
 }
 
 .checker-input{
     padding: 10px;
-    width:75%;
+    width:90%;
+    height: 150px;
+    margin: auto;
       border: none;
       outline: none;
-      margin-left: 20px;
-      background-color: #43629c;
-      color: white;
+      color: black;
+      margin-bottom: 30px;
+      box-shadow: 0px 0px 35px 5px rgb(241, 241, 241);     
+
+      
+}
+.btn-checker{
+    width: 150px;
+    margin: auto;
+}
+.checker-col {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .btn{
@@ -63,11 +75,16 @@
         width:75%;
         border: none;
         outline: none;
-        background-color: #43629c;
-        color: white;
+        box-shadow: 0px 0px 35px 5px rgb(241, 241, 241);     
+        color: black;
     }
     .checker-row{
         display: flex;
         flex-direction: row;
+    }
+
+
+    .checker{
+        padding: 0;
     }
 }

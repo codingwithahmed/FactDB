@@ -17,8 +17,9 @@ router.put('/', function(req, res, next) {
         Ledger.create({
             feedback:req.body.feedback,
             Comment:req.body.Comment,
-            link:req.body.link
-        })
+            link:req.body.link,
+            username:req.body.username
+        }).then((s) => console.log(s)).then(z => console.log(req.body.username))
         Users.findOne({email:req.body.user} , (err,user) =>{
                 if(user.factcheck == 5 ) {
                      user.factcoin++
@@ -51,10 +52,8 @@ router.get("/",(req,res,next) => {
 
 router.post("/factcoin",(req,res,next) => {
     Users.findOne({email:req.body.email} , (err,user) => {
-        res.json({
-            factcoin : user.factcoin
-        })
-        console.log( user.factcoin)
+        res.json(user)
+        console.log( user)
     })
 })
 

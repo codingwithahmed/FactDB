@@ -20,6 +20,8 @@
   background-color: white;
   margin: auto;
   margin: 15px;
+  box-shadow: 0px 0px 35px 5px rgb(241, 241, 241);     
+
 }
 
 .dsahfullbox{
@@ -30,7 +32,30 @@
   background-color: white;
   margin: auto;
   margin: 15px;
+  box-shadow: 0px 0px 35px 5px rgb(241, 241, 241);     
+
 }
+
+.MainContentDashBoard-top-row{
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media screen and (max-width:768px){
+  .MainContentDashBoard-top-row{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+        .dsahfullbox{
+          width: 70%;
+          display: none;
+        }
+        .dashbox{
+          width: 50%;
+        }
+      
+    }
 
   @media screen and (max-width:425px){
 .MainContentDashBoard-top-row{
@@ -44,5 +69,12 @@
       }
       .dashbox{
         width: 270px;
+        padding: 0;
+      }
+      .MainContentDashBoard{
+        padding: 5px;
+        width: 100%;
       }
   }
+
+

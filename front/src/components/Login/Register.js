@@ -45,6 +45,7 @@ const RegisterScreen = ({ history }) => {
 
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("email", email);
+      localStorage.setItem("username",username)
 
       history.push("/dashboard");
     } catch (error) {
@@ -106,6 +107,10 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
+        <div style={{display:"flex", flexDirection:"row"}}>
+          <input  type="checkbox" name="terms" style={{flex:1}}/>
+          <label htmlFor="terms"  style={{flex:9,verticalAlign:"middle"}}>By Signing you are accept terms and conditions</label>
+          </div>
         <button type="submit" className="btn btn-primary">
           Register
         </button>

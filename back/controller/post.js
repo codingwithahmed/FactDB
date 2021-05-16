@@ -1,5 +1,4 @@
 const { default: axios } = require('axios')
-const Post = require('../models/Post')
 const ErrorResponse = require('../utils/errorResponse')
 
 exports.postcreate = async (req ,res,next) => {
@@ -58,22 +57,7 @@ exports.tweetpost = async (req , res , next) => {
 const {link} = req.body
 
     try {
-        const post = await Post.findOne({link})
-        if(post){
-            console.log(post+ "Found")
-            res.json({
-                Headline:post.Headline,
-                link:post.link,
-                Clickbait:post.Clickbait,
-                IsInsult : post.IsInsult,
-                Result:post.Result,
-                Sarcasm : post.Sarcasm,
-                Racsim : post.Racsim
-
-            })
-        }
-
-        if(!post){
+      
 try {
             axios({
                 method:'post',
@@ -92,18 +76,15 @@ try {
                     Racsim : rel.data.Racsim,
 
                 }
-                Post.create(x)
-                .then((post) => {
-                console.log(post+ "Created")
+                console.log(x)
                 res.json(x)
-            },(err) => next(err)).catch((err) => next(err))
             },(err) => next(err)).catch((err) => next(err))
 
         } catch (error) {
                 return next(new ErrorResponse("Server Got Fucked",502))
         }
             
-        }
+        
     } catch (error) {
         return(new ErrorResponse("Server Couldn't get Data",505))
     }
@@ -129,11 +110,8 @@ try {
                     Racsim : rel.data.Racsim,
 
                 }
-                Post.create(x)
-                .then((post) => {
-                console.log(post+ "Created")
+                console.log(x)
                 res.json(x)
-            },(err) => next(err)).catch((err) => next(err))
             },(err) => next(err)).catch((err) => next(err))
 
         } catch (error) {

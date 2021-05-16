@@ -2,21 +2,26 @@ import React ,{useState,useEffect} from 'react'
 import './index.css'
 import axios from "axios"
 import SearchRounded from '@material-ui/icons/SearchRounded'
-
+/*
+   <h2>Desc : {desc} </h2>
+            <h2>Remarks : {Occurence(Remarks)} </h2>
+            <h2>comments </h2>
+            <ul>
+            {comment.map(com => <li>{com}</li>)}
+            </ul>
+*/ 
 export default function Index() {
-    const [desc,setDesc] = useState('');
+    const [data,setData] = useState([]);
     const [link,setLink] = useState('');
-    const [Remarks,setRemarks] = useState([]);
-    const [comment,setComment] = useState([]);
+
 
     const search = () => {
           axios.post('/api/api/search',{
-              link:link
+              link:link.trim()
           }).then((fact) => {
-              setDesc(fact.data.desc)
+              setData(fact.data)
               console.log(fact)
-              setRemarks(fact.data.feedback)
-              setComment(fact.data.Comment)
+              
           })
     }
 
@@ -26,6 +31,8 @@ export default function Index() {
             - arr.filter(v => v===b).length
         ).pop();
     }
+
+
     return (
         <div className="search">
             <div className='search-input'>
@@ -34,13 +41,14 @@ export default function Index() {
             <div className='search-btn-container'>
             <button className='search-btn' onClick={search}>Search</button>
             </div>
-            <h2>Desc : {desc} </h2>
-            <h2>Remarks : {Occurence(Remarks)} </h2>
-            <h2>comments </h2>
-            <ul>
-            {comment.map(com => <li>{com}</li>)}
-            </ul>
 
+            <table>
+                {data.map((fact) => <tr>
+                      <td>{fact.feedback.map((i) => <li>{i}</li>)}</td>
+                     <td>{fact.Comment.map((i) => <li>{i}</li>)}</td>
+                     <td>{fact.link}</td>
+                </tr>)}
+            </table>
 
         </div>
     )

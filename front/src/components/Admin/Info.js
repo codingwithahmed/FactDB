@@ -1,41 +1,187 @@
-import React from 'react';
-import './Post.css'
-import axios from 'axios';
+/*import React,{useState,useEffect} from 'react'
+import axios from "axios"
+import "./index.css"
+export default function Index() {
+    const [data,setData] = useState([])
+    const [row,setRow] = useState('')
 
-export default class ComplainList extends React.Component {
-  state = {
-    persons: [],
-  }
-
-  
-  componentDidMount() {
-    axios.get(`/api/api/admin/info`)
-      .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-      })
-  }
-
+    const fetchData = async () => {
+      const result = await axios(
+        '/api/api/check',
+      );
  
+      setData(result.data);
+    };
 
-  render() {
+    useEffect(() => {
+          fetchData();
+    },[])
+
     return (
-      <table>
-        {this.state.persons.length}
-         <tr>
-           <th>Header</th>
-           <th>Email</th>
-           <th>Name</th>
-           <th>Text</th>
-         </tr>
-        { this.state.persons.map(person => <tr >
-          <td>{person.Headers}</td>
-          <td>{person.Email}</td>
-          <td>{person.Name}</td>
-          <td>{person.Text}</td>
-          </tr>)}
-
-      </table>
+           <table className="ledger">
+                <tr className="ledger-row">
+                    <td className="ledger-col ledger-title">Comment</td>
+                    <td className="ledger-col ledger-title">Feedback</td>
+                    <td className="ledger-col ledger-title">Link</td>
+                </tr>
+                {
+                    data.slice().map((item,index) => <tr className="ledger-row">
+                      <td className="ledger-col">{item.Comment}</td>
+                      <td className="ledger-col">{item.feedback}</td>
+                      <td className="ledger-col">{item.link}</td>
+                    </tr>)
+                }
+            </table>
     )
-  }
+}
+*/
+
+import React,{useState,useEffect} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
+import axios from "axios"
+const columns = [
+
+  {
+    id: 'link',
+    label: 'Link',
+    minWidth: 70,
+    align: 'center',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'Comment',
+    label: 'Comment',
+    minWidth: 70,
+    align: 'center',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'feedback',
+    label: 'Feedback',
+    minWidth: 70,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },{
+    id: 'username',
+    label: 'Username',
+    minWidth: 70,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+];
+
+
+
+const useStyles = makeStyles({
+  root: {
+    width: '98%',
+    margin:"auto"
+  },
+  container: {
+    maxHeight: 840,
+  },
+});
+
+export default function StickyHeadTable() {
+  const classes = useStyles();
+  const [data,setData] = useState([])
+  const [page, setPage] = React.useState(0);
+  const [search,setSearch] = React.useState("")
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [count,setCount] = React.useState(1) 
+
+  const fetchData = async () => {
+    const result = await axios(
+      '/api/api/check',
+    );
+    await setData(result.data.reverse())
+
+  };
+
+  useEffect(() => {
+        fetchData();
+  },[])
+
+  useEffect(() => {
+    setData(data.filter(fact => fact.link.includes(search)))
+    if(search === "" || search === " "){
+        fetchData()
+    }
+  } , [search])
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+  
+  return (
+    <Paper className={classes.root} >
+      <div>
+        <input className="leder-search" onChange = {(e) =>setSearch(e.target.value)} value = {search} /> 
+      </div>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={data.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      />
+      <TableContainer className={classes.container}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow >
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth ,border:"none",borderBottom:"1px solid lightgray", background:"#f7f7f7" }}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            
+            {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+              return (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  {columns.map((column) => {
+                    const value = row[column.id];
+                    return (
+                      <TableCell key={column.id} align={column.align} style={{border:"none",borderBottom:"1px solid lightgray", background:"white",maxWidth:"20px",overflow:"hidden"}}>
+                        {column.format && typeof value === 'number' ? column.format(value) : value}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={data.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      />
+    </Paper>
+  );
 }

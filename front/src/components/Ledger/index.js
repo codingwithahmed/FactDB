@@ -69,6 +69,12 @@ const columns = [
     minWidth: 70,
     align: 'center',
     format: (value) => value.toFixed(2),
+  },{
+    id: 'username',
+    label: 'Username',
+    minWidth: 70,
+    align: 'center',
+    format: (value) => value.toFixed(2),
   },
 ];
 
@@ -88,7 +94,10 @@ export default function StickyHeadTable() {
   const classes = useStyles();
   const [data,setData] = useState([])
   const [page, setPage] = React.useState(0);
+  const [search,setSearch] = React.useState("")
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [count,setCount] = React.useState(1) 
+
   const fetchData = async () => {
     const result = await axios(
       '/api/api/check',
@@ -99,8 +108,14 @@ export default function StickyHeadTable() {
 
   useEffect(() => {
         fetchData();
-
   },[])
+
+  useEffect(() => {
+    setData(data.filter(fact => fact.link.includes(search)))
+    if(search === "" || search === " "){
+        fetchData()
+    }
+  } , [search])
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -112,6 +127,18 @@ export default function StickyHeadTable() {
   
   return (
     <Paper className={classes.root} >
+      <div>
+        <input className="leder-search" onChange = {(e) =>setSearch(e.target.value)} value = {search} /> 
+      </div>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={data.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      />
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>

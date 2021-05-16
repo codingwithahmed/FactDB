@@ -90,7 +90,7 @@ export default function Search() {
                   <h1> Sarcasm : {sarcasm} </h1>
                   <h1> ClickBait : {Clickbait} </h1>
                   <h1> Racism : {Racsim} </h1>
-                  <h1>Result : {result} </h1>
+                  <h1>Factual accuracy : {result} </h1>
                   <h1>Insult : {IsInsult } </h1>
                 </div>
            

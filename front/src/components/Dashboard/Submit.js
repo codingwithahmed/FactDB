@@ -7,9 +7,23 @@ export default function Search() {
     const [link,setLink] = useState(null)
     const [para, setPara] = useState(null)
     const [language,setLanguage] = useState("English")
+    const [data, setData] = useState([])
+    const [success,setSuccess] = useState("")
+    const [error,setError] = useState("")
+    useEffect(() => {
+        
+    const getFact = async () =>  {
+        axios.post("/api/api/check/factcoin" , {email:localStorage.getItem("email")}).then((fact) => {
+            setData(fact.data)
+            console.log(fact.data)
+        })
+            
+    }
+    getFact()
+    }, [])
     const handleSearch= async (e) => {
-         console.log('sad')
-
+      e.preventDefault()   
+      console.log('sad')
          const config = {
             header: {
               "Content-Type": "application/json",
@@ -34,12 +48,15 @@ export default function Search() {
               {link:link,
                 desc:para,
                 language:language,
-                username:localStorage.getItem("email")},
+                username:data.username,
+                email:localStorage.getItem("email")},
               config
           ).then((post) => {
-              setPara(post.data.desc)
-              setLink(post.data.desc)
-              setLanguage(post.data.desc)
+              setSuccess(post.data.success)
+              setError(post.data.error)
+              setLink("")
+              setPara("")
+              
           })
             }
          catch (error) {
@@ -47,30 +64,35 @@ export default function Search() {
         }
     }
   }
+
+
     return (
         <div className="search">
+          {error && <span className="error-message">{error}</span>}
+        {success && <span className="success-message">{success}</span>}
             <div className="searchSpace center"  >
                 <h1 style={{padding:"15px"}}>Submit </h1>
                 <p>Enter fact To Earn fact Coins</p>
-                
             </div>
             
              <form onSubmit={handleSearch} style={{margin:"auto",width:"fit-content"}}>
             <div className="Searchsearchbox" style={{margin:"15px"}}>
                  <SearchRounded fontSize="large" className=""/>
-                  <input placeholder="Enter Link to check" className="" onChange= {(e) => setLink(e.target.value)} />
+                  <input required placeholder="Enter Link to check" className="" onChange= {(e) => setLink(e.target.value)} value={link}/>
             </div>
             <div className="Searchsearchbox" style={{margin:"15px"}}>
-                  <textarea placeholder="Give one Line Introduction" className="Searchtextarea" onChange= {(e) => setPara(e.target.value)} />
+                  <textarea required placeholder="Give one Line Introduction" className="Searchtextarea" onChange= {(e) => setPara(e.target.value)} value={para} />
             </div>
          
             <div style={{margin:"15px"}}>
               <div className='dashoption'>
                 <div>   <select id="language" name="language" onChange= {(e) => setLanguage(e.target.value)}>
-    <option value="English">English</option>
-    <option value="Arabic">Arabic</option>
-    <option value="French">French</option>
-    <option value="Chinese">Chinese</option>
+                <option value="English">English</option>
+<option value="Arabic">Arabic</option>
+<option value="French">French</option>
+<option value="Chinese">Chinese</option>
+<option value="Hindi">Hindi</option>
+<option value="Spanish ">Spanish </option>
   </select></div>
             <div>
             <button className="btn-outline" >Submit</button>  

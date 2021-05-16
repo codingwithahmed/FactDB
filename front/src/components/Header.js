@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className="header">
             
-           <Link className="logo" to="/"> <h1 >factDB</h1></Link>
+           <Link className="logo" to="/"> <h1 >factDB.net</h1></Link>
 
            
 

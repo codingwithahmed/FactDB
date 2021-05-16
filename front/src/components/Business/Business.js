@@ -3,7 +3,7 @@ import As from'./assets/s.svg'
 import './Business.css'
 import Finance from './assets/Finance.svg'
 import Followers from './assets/Followers.svg'
-
+import {Link} from "react-router-dom"
 
 
 const x = () => {
@@ -26,7 +26,7 @@ export default function Business({index}) {
 
             
        <h1 className="heading center">Use Case</h1>
- <p className="center subheading" style={{marginTop:"-20px"}}>Get FactDB for business and show people that they can trust you
+ <p className="center subheading" style={{marginTop:"-20px"}}>Get factDb  for business and show people that they can trust you
 
 </p>
   
@@ -34,7 +34,7 @@ export default function Business({index}) {
       <div className="box-row">
          <div className="box-col">
             <img src={Finance} className="business-row-img" alt=""/>
-          <h3>factDB api</h3>
+          <h3>factDb  Api</h3>
           <p>Integrate our fact check database with your product.</p>
          </div>
          <div className="box-col">
@@ -46,9 +46,9 @@ export default function Business({index}) {
       </div>
   </div>
   <div className='center'>
-     <button className='bs-btn' type="email">
-        Contact US 
-     </button>
+  <Link to="/help" style={{color:"white"}}> <button className='bs-btn' type="email">
+     Contact US
+     </button> </Link>
   </div>
         </div>
          

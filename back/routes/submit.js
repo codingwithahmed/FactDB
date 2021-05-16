@@ -15,29 +15,41 @@ router.route('/')
   })
 })
 .post((req,res,next) => {
-    Submit.create(req.body)
-    Users.findOne({email:req.body.username} , (err,user) =>{
-      if(user.factsubmit == 10 ) {
-           user.factcoin++
-           user.factsubmit = 0
-           user.save()
-           .then((user) => {
-              console.log(user)
-          })
-      }
-      else {
-          user.factsubmit++
-          user.save()
-          .then((user) => {
-              console.log(user)
-          })
-      }
-   
-  })
-  .then( (submited) => {
-    res.json(submited)
-    res.statusCode = 200
-   }, (err) => next(err)).catch((err) => next(err))
+    Submit.create(req.body).then( (submited) => {
+        Users.findOne({email:req.body.email} , (err,user) =>{
+            if(user.links.includes(req.body.link) == true){
+                res.json({
+                    error:"User cannot submit same link twice"
+                })
+            }
+            else{
+                user.links.push(req.body.link)
+              if(user.factsubmit == 10 ) {
+                 user.factcoin++
+                 user.factsubmit = 0
+                 user.save()
+                 .then((user) => {
+                    console.log(user)
+                })
+            }
+            else {
+                user.factsubmit++
+                user.save()
+                .then((user) => {
+                    console.log(user)
+                })
+            }
+            res.json({success:"Submission sucessful"})
+            res.statusCode = 200
+            }
+            
+         
+        })
+        
+       }, (err) => next(err)).catch((err) => next(err))
+
+    
+  
 });
 
 
