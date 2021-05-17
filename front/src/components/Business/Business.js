@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import As from'./assets/s.svg'
 import './Business.css'
 import Finance from './assets/Finance.svg'
 import Followers from './assets/Followers.svg'
 import {Link} from "react-router-dom"
+import {ana} from '../../firebaseconfig'
 
 
 const x = () => {
@@ -18,7 +19,9 @@ const x = () => {
    )
 }
 export default function Business({index}) {
-
+   useEffect(() => {
+      ana.logEvent("Business Viewed")
+    })
    
     return (
         <div className="business" >

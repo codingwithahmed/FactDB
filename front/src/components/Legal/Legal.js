@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Sidebar from './Sidebar'
 import './Legal.css'
 import Privacy from './Privacy'
@@ -8,8 +8,13 @@ import {
     Switch,
     Route
   } from "react-router-dom";
+import {ana} from '../../firebaseconfig'
 import Termsofservice from './Termsofservice'
 export default function Legal() {
+
+    useEffect(() => {
+        ana.logEvent("Legal Viewed")
+      })
     return (
         <div className="legal">
             <Sidebar />

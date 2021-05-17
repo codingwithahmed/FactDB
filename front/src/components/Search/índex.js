@@ -70,6 +70,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import axios from "axios"
 import "./index.css"
+import {ana} from '../../firebaseconfig'
+
 const columns = [
 
   {
@@ -145,7 +147,9 @@ export default function StickyHeadTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  
+  useEffect(() => {
+    ana.logEvent("Search Viewed")
+  })
   return (
     <Paper className={classes.root} >
       

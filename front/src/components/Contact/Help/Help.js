@@ -1,14 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import './Help.css'
-import Tick from '../assets/asda.svg'
-import Buss from '../assets/Business.svg'
-import Support from '../assets/support.svg'
-import Legala from '../assets/legal.svg'
-import Investor from '../assets/Investorrelations.svg'
-import Sync from '../assets/sync.svg'
-import Alert from '../assets/alert.png'
-import Server from '../assets/server.svg'
 import axios from "axios"
+import {ana} from '../../../firebaseconfig'
 
 
 export default function Help() {
@@ -41,7 +34,9 @@ export default function Help() {
         }
     }
     
-
+    useEffect(() => {
+        ana.logEvent("Help Viewed")
+      })
     return (
         <div className="help">
             <h1 className="heading center">Hi! How can we help?</h1>
