@@ -148,12 +148,17 @@ export default function StickyHeadTable() {
   
   return (
     <Paper className={classes.root} >
+      
      <div className='search-input'>
+       
                 <input type='search' placeholder='Paste a link to search' onChange={(e) => setLink(e.target.value) } />
             </div>
             <div className='search-btn-container'>
             <button className='search-btn' onClick={fetchData}>Search</button>
             </div>
+            <h2>Search result are crowd-sourced and based on individual opinions. If you do
+not find news link you searched, We recommend you to Sign-up and submit
+link for result. </h2>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"

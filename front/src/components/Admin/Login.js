@@ -23,14 +23,14 @@ const LoginScreen = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/admin/login",
+        "/api/api/admin/login",
         { email, password },
         config
       );
 
       localStorage.setItem("adminToken", data.token);
       try {
-          setTimeout("location.href = 'http://www.joinfactify.com/admin'",1500)
+          setTimeout("location.href = 'https://www.factdb.net/admin'",1500)
       } catch (error) {
         setError(error.response.data.error);
         setTimeout(() => {

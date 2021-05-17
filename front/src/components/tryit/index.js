@@ -87,6 +87,9 @@ export default function Search() {
             <div className="SearchContent">
             {bl}
             <div>
+              <h2>AI fact-checker is trained on static data. We do not stand by it’s rating. While
+we will continue to work on building it. Accuracy will continue to increase as
+we have more user generated data to train our models. Thank You </h2>
                   <h1> Sarcasm : {sarcasm} </h1>
                   <h1> ClickBait : {Clickbait} </h1>
                   <h1> Racism : {Racsim} </h1>
