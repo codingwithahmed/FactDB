@@ -1,14 +1,14 @@
 import firebase from 'firebase'
 
- const firebaseConfig = {
-    apiKey: "AIzaSyAfHGxerjsJFOGNYp6vVn0Ch_SuWRw4SKA",
-    authDomain: "factify-451bb.firebaseapp.com",
-    projectId: "factify-451bb",
-    storageBucket: "factify-451bb.appspot.com",
-    messagingSenderId: "1062379335974",
-    appId: "1:1062379335974:web:a372491197bb880fea51e7",
-    measurementId: "G-HLW9N7KPML"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyDfTRZOrHvFOD_sxcd88WlHoyXHJF8VtBg",
+  authDomain: "factdb-4a5a4.firebaseapp.com",
+  projectId: "factdb-4a5a4",
+  storageBucket: "factdb-4a5a4.appspot.com",
+  messagingSenderId: "388060673911",
+  appId: "1:388060673911:web:5cbaed9ff8a6ab5dbd1372",
+  measurementId: "G-0GWV54ZZGC"
+};
 
 const firebaseapp  = firebase.initializeApp(firebaseConfig)
 

@@ -17,8 +17,8 @@ export default function Footer() {
              <Link to="/trysearch" className="footer_link">  <p className="footer_link">Search </p></Link>
             </div>
             <div className="footer_links" >
-             <p className="footer_link"><a href="https://www.joinfactify.com">Factify</a></p>
-             <p className="footer_link"><a href="https://www.factcoin.org">Factcoin</a></p>
+             <p className="footer_link"><a href="https://anwfye.medium.com/fact-company-a23689f78be5">Factify</a></p>
+             <p className="footer_link"><a href="https://anwfye.medium.com/factdb-8be8bb5ce62e">Factcoin</a></p>
             </div>
         </div>
     )
