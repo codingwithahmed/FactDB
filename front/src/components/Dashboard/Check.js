@@ -113,7 +113,7 @@ const [feedback,setFeedback] = useState('Agree');
 <option value="Hate Speech">Hate Speech</option>
 </select></div>
      <p style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.desc}</p>
-     <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.link}</a>
+     <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px",color:"blue"}}>{props.link}</a>
      <div className="checker-col">
           <button className='btn btn-checker' type='submit'>Submit</button>
 

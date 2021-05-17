@@ -64,7 +64,6 @@
     }
     .header{
         width: 540px;
-        
     }
     .searchbar{
         display: none;
@@ -74,9 +73,18 @@
 
 @media screen and (max-width:425px){
     
-    .header{
-        width: 340px;
+  .header{
+      width: 60%;
+  }
+    
+    .logo > h1 {
+        font-size: 25px;
     }
-    
-    
+
+    .SignUp{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 80px;
+    }
 }

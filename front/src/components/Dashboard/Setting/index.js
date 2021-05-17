@@ -55,7 +55,7 @@ export default function Index() {
                 </div>
             </div>
             <div className="row">
-            <h3 className='setting-heading'>We are working towards making FactCoin Redeemable. Please continue to
+            <h3  className='setting-heading'>We are working towards making FactCoin Redeemable. Please continue to
 fact-check. We will soon let you know how to redeem via Email provided.</h3>
             </div>
         </form>

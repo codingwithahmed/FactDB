@@ -47,6 +47,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import axios from "axios"
+import "./index.css"
 const columns = [
 
   {
@@ -94,6 +95,7 @@ export default function StickyHeadTable() {
   const classes = useStyles();
   const [data,setData] = useState([])
   const [page, setPage] = React.useState(0);
+  const [user,setUser] = React.useState("")
   const [search,setSearch] = React.useState("")
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [count,setCount] = React.useState(1) 
@@ -102,12 +104,13 @@ export default function StickyHeadTable() {
     const result = await axios(
       '/api/api/check',
     );
-    await setData(result.data.reverse())
-
+    await setData(result.data.reverse().filter(fact => fact.username != null ))
+    await console.log(data)
   };
 
   useEffect(() => {
         fetchData();
+        
   },[])
 
   useEffect(() => {
@@ -116,6 +119,14 @@ export default function StickyHeadTable() {
         fetchData()
     }
   } , [search])
+
+  useEffect(() => {
+    setData(data.filter(fact => fact.username.includes(user)))
+    if(user === "" || user === " "){
+        fetchData()
+    }
+  } , [user])
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -127,8 +138,15 @@ export default function StickyHeadTable() {
   
   return (
     <Paper className={classes.root} >
-      <div>
-        <input className="leder-search" onChange = {(e) =>setSearch(e.target.value)} value = {search} /> 
+      <div className="ledger-row"> 
+      <div className="ledger-row">
+      <p>Search By Username</p>
+      <input className="leder-search" onChange = {(e) =>setUser(e.target.value)} value = {user} /> 
+      </div>
+      <div className="ledger-row">
+      <p>Search By Link</p>
+      <input className="leder-search" onChange = {(e) =>setSearch(e.target.value)} value = {search} /> 
+      </div>
       </div>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
@@ -163,7 +181,7 @@ export default function StickyHeadTable() {
                     const value = row[column.id];
                     return (
                       <TableCell key={column.id} align={column.align} style={{border:"none",borderBottom:"1px solid lightgray", background:"white",maxWidth:"20px",overflow:"hidden"}}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
+                        {column.format && typeof value === 'number' ? column.format(value) : value} 
                       </TableCell>
                     );
                   })}

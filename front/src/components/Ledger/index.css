@@ -1,13 +1,32 @@
-.ledger{
-    margin: auto;
-    width: 850px;
-    padding: 15px;
 
+.leder-search {
+    padding: 5px;
+    width: 320px;
+    margin-left: 5px;
 }
-.ledger-col{
-    padding: 35px;
+.ledger-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
-.ledger-title{
-    font-size: 22px;
-    font-weight: 500;
+
+@media screen  and (max-width:768px) {
+    
+.leder-search {
+    padding: 5px;
+    width: 170px;
 }
+}
+
+@media screen  and (max-width:425px) {
+    
+    .leder-search {
+        padding: 5px;
+        width: 250px;
+        margin-left:0px;
+    }
+    .ledger-row{
+        margin: auto;
+    flex-direction: column;
+    }
+    }
