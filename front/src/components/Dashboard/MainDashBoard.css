@@ -3,9 +3,7 @@
 .maindashboard{
     margin-top: 50px;
 }
-@media screen and (max-width:768px) {
-    
-}
+
 
 @media screen and (max-width:425px) {
     .maindashboard{
