@@ -120,7 +120,7 @@ const [test,setTest] = useState("")
         desc:desc,
         user:email,
         username:user
-       }).then(x =>  setTimeout("location.reload()",1000))
+       })
      
      } catch (error) {
        console.log(error)
