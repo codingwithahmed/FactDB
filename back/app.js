@@ -2,7 +2,7 @@ require("dotenv").config({ path: "./config.env" });
 var express = require('express');
 var mongoose = require('mongoose');
 const { get } = require('./routes/index');
-const uri = "mongodb://127.0.0.1:27017/Fact_DB"
+const uri = "mongodb://127.0.0.1:27017/fact"
 const authRouter = require('./routes/auth')
 const errorHandler = require("./middleware/error");
 const privateRouter = require('./routes/private')

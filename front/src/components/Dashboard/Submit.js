@@ -31,8 +31,8 @@ export default function Search() {
           };
           console.log('sad')
             setLanguage('English')
-            if (link.split("/")[1] === 'https://bit.ly/'){
-              setPara("Sorry Dont Eneter Bit.ly link")
+            if (link.includes('https://bit.ly/')){
+              setError("Sorry Dont Eneter Bit.ly link")
               
             }
             else {

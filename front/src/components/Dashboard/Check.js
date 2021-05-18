@@ -55,13 +55,13 @@ const [test,setTest] = useState("")
       <div className='row'>  
         <div><h3>@{props.username}</h3></div>
         <h1>{props.index}</h1>
-         <select id="Agree" name="Agree" required  className='checkerlang' onChange={(e) => setFeedback(e.target.value)} defaultValue="True" >
-<option value="Propoganda">Propoganda</option>
-<option value="True">True</option>
-<option value="False">False</option>
-<option value="Misinformation">Misinformation</option>
-<option value="Disinformation">Disinformation</option>
-<option value="Hate Speech">Hate Speech</option>
+         <select id="True" name="True" required  className='checkerlang' onChange={(e) => setFeedback(e.target.value)} defaultValue="True" >
+<option value="Propoganda ">Propoganda</option>
+<option value="True ">True</option>
+<option value="False ">False</option>
+<option value="Misinformation ">Misinformation</option>
+<option value="Disinformation ">Disinformation</option>
+<option value="Hate Speech ">Hate Speech</option>
 </select></div>
      <p style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.desc}</p>
      <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px",color:"blue"}}>{link}</a>
