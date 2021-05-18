@@ -34,6 +34,8 @@ const UsersSchema = new Schema({
      factcoin:{type:Number,default:0},
      factcheck:{type:Number,default:0},
      factsubmit:{type:Number,default:0},
+     total_factcheck:{type:Number,default:0},
+     total_factsubmit:{type:Number,default:0},
      walletaddress:{type:String},
      links:[String]
 

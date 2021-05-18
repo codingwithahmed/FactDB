@@ -21,6 +21,7 @@ router.put('/', function(req, res, next) {
         }).then((s) => Users.findOne({email:req.body.user} , (err,user) =>{
             if(user.factcheck == 5 ) {
                  user.factcoin++
+                 user.total_factcheck++
                  user.factcheck = 0
                  user.save()
                  .then((user) => {
@@ -29,6 +30,7 @@ router.put('/', function(req, res, next) {
             }
             else {
                 user.factcheck++
+                user.total_factcheck++
                 user.save()
                 .then((user) => {
                     console.log(user)

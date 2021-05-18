@@ -27,6 +27,7 @@ router.route('/')
               if(user.factsubmit == 10 ) {
                  user.factcoin++
                  user.factsubmit = 0
+                 user.total_factsubmit++
                  user.save()
                  .then((user) => {
                     console.log(user)
@@ -34,6 +35,7 @@ router.route('/')
             }
             else {
                 user.factsubmit++
+                user.total_factsubmit++
                 user.save()
                 .then((user) => {
                     console.log(user)
