@@ -29,14 +29,14 @@ app.use(cors({
 }))
 
 
-app.use('/api/api/auth',authRouter)
-app.use('/api/api/private',privateRouter)
-app.use('/api/api/admin',adminrouter)
-app.use('/api/api/submitfact',submitRouter)
-app.use('/api/api/post',postRouter)
-app.use('/api/api/search',searchRouter);
-app.use('/api/api/check',checkRouter);
-app.use("/api/api/user",userRouter)
+app.use('/api/auth',authRouter)
+app.use('/api/private',privateRouter)
+app.use('/api/admin',adminrouter)
+app.use('/api/submitfact',submitRouter)
+app.use('/api/post',postRouter)
+app.use('/api/search',searchRouter);
+app.use('/api/check',checkRouter);
+app.use("/api/user",userRouter)
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
