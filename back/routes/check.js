@@ -18,7 +18,8 @@ router.put('/', function(req, res, next) {
             Comment:req.body.Comment,
             link:req.body.link,
             username:req.body.username
-        }).then((s) => Users.findOne({email:req.body.user} , (err,user) =>{
+        }).then(z => console.log(req.body.username))
+        Users.findOne({email:req.body.user} , (err,user) =>{
             if(user.factcheck == 5 ) {
                  user.factcoin++
                  user.total_factcheck++
@@ -37,8 +38,7 @@ router.put('/', function(req, res, next) {
                 })
             }
          
-        })).then(z => console.log(req.body.username))
-        
+        })
 
             
         }, (err) => next(err)).catch((err) => next(err))

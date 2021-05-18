@@ -57,14 +57,14 @@ export default function MainContentDashBoard() {
                   <div className="dashbox">
                   <img className="sphere" src={EmailClose} alt="EmailClose" />
 
-                 <h2>{data.factcheck} FC</h2>
+                 <h2>{data.total_factcheck} FC</h2>
                  <p>You Have Check Facts</p>
                   </div>
                   
                   <div className="dashbox">
                   <img className="sphere" src={EmailOpen} alt="EmailOpen" />
 
-                  <h2>{data.factsubmit} FS</h2>
+                  <h2>{data.total_factsubmit} FS</h2>
                  <p>You Have Submitted Facts</p>
                   </div>
              </div>
