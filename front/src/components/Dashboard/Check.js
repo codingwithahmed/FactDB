@@ -113,18 +113,15 @@ const [test,setTest] = useState("")
   async function handleCheck(e) {
     e.preventDefault() 
      try {
-      axios.put('/api/api/check',{   link:link,
+      axios.put('/api/api/check',{  
+         link:link,
         Comment:comment, 
         feedback:feedback,
         desc:desc,
         user:email,
         username:user
-       })
-       try {
-         setTimeout("location.reload()",100) 
-       } catch (error) {
-        console.log(error)
-       }
+       }).then(x =>  setTimeout("location.reload()",500))
+     
      } catch (error) {
        console.log(error)
      }
