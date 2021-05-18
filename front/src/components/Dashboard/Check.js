@@ -85,22 +85,52 @@ export default function Tweet() {
 import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import './Check.css'
+import {user,email} from "../../Data"
+
+
 
 const Card = (props) => {
 const [comment,setComment] = useState('');
 const [feedback,setFeedback] = useState('Agree');
-  const  handleSubmit =   () => {
-    axios.put('/api/api/check',{
-      link:props.link,
+const [link,setLink] = useState(props.link)
+const [desc,setDesc] = useState(props.desc)
+
+const [test,setTest] = useState("")
+
+  const  handleSubmit =  async (e) => {
+    await axios.put('/api/api/check/check',{
+      link:link,
       Comment:comment,
       feedback:feedback,
-      desc:props.desc,
-      user:localStorage.getItem("email"),
-      username:localStorage.getItem("username")
-    }).then((x)=> console.log(x.data))
+      desc:desc,
+      user:email,
+      username:user
+    });
+  }
+
+ 
+
+  async function handleCheck(e) {
+    e.preventDefault() 
+     try {
+      axios.put('/api/api/check',{   link:link,
+        Comment:comment, 
+        feedback:feedback,
+        desc:desc,
+        user:email,
+        username:user
+       })
+       try {
+         setTimeout("location.reload()",100) 
+       } catch (error) {
+        console.log(error)
+       }
+     } catch (error) {
+       console.log(error)
+     }
   }
     return(
-      <form onSubmit={handleSubmit} className='check-contaier' >
+      <form  className='check-contaier'  onSubmit={e => handleCheck(e)} >
       <div className='row'>  
         <div><h3>@{props.username}</h3></div>
         <h1>{props.index}</h1>
@@ -113,26 +143,26 @@ const [feedback,setFeedback] = useState('Agree');
 <option value="Hate Speech">Hate Speech</option>
 </select></div>
      <p style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px"}}>{props.desc}</p>
-     <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px",color:"blue"}}>{props.link}</a>
+     <a href={props.link}style={{width:"90%",margin:"auto",overflow:"hidden",margin:"15px",color:"blue"}}>{link}</a>
      <div className="checker-col">
-          <button className='btn btn-checker' type='submit'>Submit</button>
+          <button  className='btn btn-checker' type='submit'>Submit</button>
 
      <textarea className='checker-input' placeholder="add comment" onChange={(e) => { setComment(e.target.value) } }  required/>
        </div>
+       {test}
      </form>
     )
 }
 
-export class ComplainList extends React.Component {
-  state = {
-    facts: [],
-    start:[],
-    end:[],
-    display:""
-  }
 
-  
-  componentDidMount() {
+
+
+
+export default function Index (props) {
+  const [facts,setFacts] = useState([])
+
+  useEffect(() => {
+
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
       while (0 !== currentIndex) {
@@ -146,26 +176,27 @@ export class ComplainList extends React.Component {
       return array;
     }
 
-    axios.get(`/api/api/submitfact`)
+    const fetchData = async () => {
+      axios.get(`/api/api/submitfact`)
       .then(res => {
         const facts = res.data;
-        this.setState({ facts:shuffle(facts) })
+        let self = this
+        setFacts(facts)
       });
-  }
- 
- 
-  render() {
+    }
 
-    return (
-      <div className='checker' > 
-        { 
-             this.state.facts.filter(fact => fact.language === this.props.language  & !fact.users.includes(localStorage.getItem("email"))).reverse().map((fact,index) =><Card desc={fact.desc} link={fact.link} username={fact.username} /> )
-  }
-      </div>
-           
-        )
-  } 
+    fetchData()
+  },[])
+  return(
+    <div className="checker">
+      {
+          facts.filter(fact => fact.language === props.language  & !fact.users.includes(props.email)).reverse().map((fact,index) =><Card desc={fact.desc} link={fact.link} username={fact.username} /> )
+      }
+    </div>
+  )
 }
+
+
 
 
 /*

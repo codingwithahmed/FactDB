@@ -62,7 +62,7 @@ fact-checking platform. </h1>
 <h2 className="heading center">Over 7000 Languages, Let’s try truth</h2>
 
 
-<div style={{margin:"auto",width:"fit-content"}}>
+<div style={{margin:"auto",width:"250px"}}>
 <button className="btn " style={{paddingRight:"35px",paddingLeft:"35px"}}><Link to="/tryit" style={{color:"white"}}> Try AI fact-checker </Link> </button>
 </div>
 

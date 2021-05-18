@@ -11,6 +11,5 @@ const firebaseConfig = {
 };
 
 const firebaseapp  = firebase.initializeApp(firebaseConfig)
-
 const ana = firebase.analytics()
 export  {ana}

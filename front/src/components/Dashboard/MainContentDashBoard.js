@@ -2,9 +2,10 @@ import React,{useState,useEffect} from 'react'
 import './MainContentDashBoard.css'
 import EmailOpen from "./assets/emailopen.png"
 import EmailClose from "./assets/emailclose.png"
-import {ComplainList} from './Check'
+import ComplainList from './Check'
 import axios from 'axios'
 import {Link} from "react-router-dom"
+
 export default function MainContentDashBoard() {
 
     const [language,setLanguage] = useState('English')

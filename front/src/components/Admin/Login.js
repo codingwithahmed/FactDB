@@ -30,7 +30,7 @@ const LoginScreen = ({ history }) => {
 
       localStorage.setItem("adminToken", data.token);
       try {
-          setTimeout("location.href = 'http://factdb.net/admin'",1500)
+          setTimeout("location.href = 'http ://factdb.net/admin'",1500)
       } catch (error) {
         setError(error.response.data.error);
         setTimeout(() => {

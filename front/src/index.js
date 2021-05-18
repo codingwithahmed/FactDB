@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase/app'
-
+import "normalize.css"
 ReactDOM.render(
   <React.StrictMode>
     <App />
