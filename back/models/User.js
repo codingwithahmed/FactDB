@@ -3,6 +3,19 @@ const Schema = mongoose.Schema;
 const bcrypt  = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const crypto = require(`crypto`)
+const News = require('./News')
+
+const newSchema = new Schema ({
+    content:String,
+    user:String,
+    link:String,
+    pushed:{
+        users:[String],
+        push_times:Number
+    },
+    uni_id: String})
+
+
 const UsersSchema = new Schema({
 
      username:{
@@ -37,7 +50,8 @@ const UsersSchema = new Schema({
      total_factcheck:{type:Number,default:0},
      total_factsubmit:{type:Number,default:0},
      walletaddress:{type:String},
-     links:[String]
+     links:[String],
+     savednews:[newSchema]
 
 } , {
     timestamps:true

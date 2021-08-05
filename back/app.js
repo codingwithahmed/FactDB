@@ -14,6 +14,7 @@ const submitRouter = require("./routes/submit")
 const searchRouter = require("./routes/search")
 const userRouter = require("./routes/users")
 const checkRouter = require('./routes/check')
+const newsRouter = require('./routes/News')
 mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true} ,() => {
   console.log('MongoDb Connected...')
 })
@@ -37,6 +38,7 @@ app.use('/api/post',postRouter)
 app.use('/api/search',searchRouter);
 app.use('/api/check',checkRouter);
 app.use("/api/user",userRouter)
+app.use('/api/news',newsRouter)
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
