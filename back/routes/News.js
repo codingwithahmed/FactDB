@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose')
 const News = require('../models/News');
+var fs = require('fs');
+const {DeleteFunlinkSyncile} = require('../utils/util')
+var AWS = require('aws-sdk');
+let {uploadFile} = require('../utils/S3')
+AWS.config.update({region: 'us-west-2'});
+s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 
 function shuffelWord (word){
@@ -16,24 +22,31 @@ function shuffelWord (word){
 router.route('/')
 .get((req,res,next) => {
     News.find((err,New) => {
+        New.forEach(e => e.src ='')
         res.json(New)
     })
 })
 
-.post((req,res,next) => {
+.post( async (req,res,next) => {
     const data = req.body
-    console.log(data)
+
+    const s3return = await uploadFile(data.file,data.ext)
+    console.log(s3return)
+    DeleteFunlinkSyncile(s3return.Key)
     News.create({
         content  : data.content,
         user: data.user,
         link: data.link,
         pushed:[{
-            users:data.users,
-            push_times:data.push_times
+            users:data.pushed.users,
+            push_times:data.pushed.push_times
         }],
+        src:s3return.Location,
+        meadia:data.media,
+        ext:data.ext,
         uni_id: shuffelWord(data.user+data.link+Math.random()*14130)
-    }).then((x) => {
-        res.json({x,succes:"true"})
+    }).then( (x) => {
+        res.json({x,succes:"File Uploading"})
     }).catch((err) => next(err))
 })
 
@@ -47,6 +60,6 @@ router.route('/')
     })
 });
 
-router.route("/save")
+
 
 module.exports = router

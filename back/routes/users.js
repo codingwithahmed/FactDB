@@ -55,7 +55,9 @@ router.route('/savenews')
         users:data.users,
         push_times:data.push_times
     }],
-    uni_id: data.uni_id
+    uni_id: data.uni_id,
+    src:data.src,
+
    })
    user.save()
    console.log("Saved News")

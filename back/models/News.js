@@ -9,7 +9,12 @@ const newSchema = new Schema ({
         users:[String],
         push_times:Number
     },
-    uni_id: String})
+    uni_id: String,
+    src:String,
+    isVideo:Boolean,
+    isAudio:Boolean,
+    isImg:Boolean
+})
 
 var News = mongoose.model('New', newSchema)
 

@@ -17,8 +17,11 @@ const submitSchema = new Schema ({
     }],
     users:[{
         type: String
-    }]
-   
+    }],
+    src:String,
+    isVideo:Boolean,
+    isAudio:Boolean,
+    isImg:Boolean
 })
 
 var Submited = mongoose.model('Submit', submitSchema)

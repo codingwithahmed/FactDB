@@ -22,13 +22,12 @@ var app = express();
 
 
 
-app.use(express.json());
+app.use(express.json({limit: '150gb'}));
 app.use(cors({
   "origin": "*",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "allowedHeaders": ['Authorization', 'Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Access-Control-Request-Method', 'Access-Control-Request-Headers', 'Cache-Control']
 }))
-
 
 app.use('/api/auth',authRouter)
 app.use('/api/private',privateRouter)
