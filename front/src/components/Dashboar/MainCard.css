@@ -1,0 +1,28 @@
+.main-card{
+    width: fit-content;
+    display: flex;
+    background-color: #4267B220;
+    flex-direction: row;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+.main-card-txt{
+    color: black;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+.main-card > img {
+    width: 165px;
+    padding: 2%;
+}
+
+@media screen and (max-width:768px){
+    .main-card > img {
+        width: 62px;
+        flex-direction: column;
+
+    }
+}
