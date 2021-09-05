@@ -33,6 +33,7 @@ router.route('/')
     const s3return = await uploadFile(data.file,data.ext)
     console.log(s3return)
     DeleteFunlinkSyncile(s3return.Key)
+    let src = s3return.Location
     News.create({
         content  : data.content,
         user: data.user,
@@ -41,12 +42,14 @@ router.route('/')
             users:data.pushed.users,
             push_times:data.pushed.push_times
         }],
-        src:s3return.Location,
+        source:src.toString(),
         meadia:data.media,
         ext:data.ext,
         uni_id: shuffelWord(data.user+data.link+Math.random()*14130)
     }).then( (x) => {
         res.json({x,succes:"File Uploading"})
+        console.log(x)
+        x.save()
     }).catch((err) => next(err))
 })
 

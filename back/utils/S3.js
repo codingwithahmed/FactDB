@@ -14,13 +14,14 @@ const s3 = new S3({
 })
 
  const uploadFile = async (file,mimeType) => {
+     console.log(file.split('.')[file.split('.').length - 1])
+     mimeType = file.split('.')[file.split('.').length - 1]
     var base64Data = file.split(';base64,')[1];
     let filename = crypto.randomBytes(20).toString('hex');
-    const fileContents = new Buffer.from(base64Data, 'base64')
-await fs.writeFile(filename+'.'+mimeType, fileContents,(err) => {
+   // const fileContents = new Buffer.from(base64Data, 'base64')
+    await fs.writeFile(filename+'.'+mimeType, file,(err) => {
     if(err) console.error(err)
     console.log('Filename : ', filename+'.'+mimeType )
-
 })
 
 const selectFile = fs.createReadStream('./'+filename+'.'+mimeType)
@@ -31,7 +32,7 @@ const selectFile = fs.createReadStream('./'+filename+'.'+mimeType)
 
 const uploadPrams = {
     Bucket : BucketName,
-    Body : selectFile,
+    Body : file,
     Key: filename+'.'+mimeType
 }
 return s3.upload(uploadPrams).promise()
