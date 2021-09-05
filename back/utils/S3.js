@@ -14,8 +14,9 @@ const s3 = new S3({
 })
 
  const uploadFile = async (file,mimeType) => {
-     console.log(file.split('.')[file.split('.').length - 1])
-     mimeType = file.split('.')[file.split('.').length - 1]
+
+    // console.log(file.split('.')[file.split('.').length - 1])
+    // mimeType = file.split('.')[file.split('.').length - 1]
     var base64Data = file.split(';base64,')[1];
     let filename = crypto.randomBytes(20).toString('hex');
    // const fileContents = new Buffer.from(base64Data, 'base64')

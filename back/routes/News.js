@@ -29,7 +29,6 @@ router.route('/')
 
 .post( async (req,res,next) => {
     const data = req.body
-
     const s3return = await uploadFile(data.file,data.ext)
     console.log(s3return)
     DeleteFunlinkSyncile(s3return.Key)
